@@ -56,6 +56,8 @@ namespace Fall2020_CSC403_Project {
 
 	  // Show player's health bar when the game first loaded
 	  PlayerHealthBar();
+
+			MoveInterval(enemyCheeto, picEnemyCheeto, "x");
 	}
 
 	private Vector2 CreatePosition(PictureBox pic) {
@@ -182,13 +184,13 @@ namespace Fall2020_CSC403_Project {
 		  break;
 
 		case Keys.Escape:
-          frmPause = new FrmPause();
-          frmPause.Show();
-          break;
+      frmPause = new FrmPause();
+      frmPause.Show();
+      break;
 
-        default:
-          player.ResetMoveSpeed();
-          break;
+    default:
+      player.ResetMoveSpeed();
+      break;
 	  }
 	}
 
@@ -216,9 +218,19 @@ namespace Fall2020_CSC403_Project {
 	}
 
 	// Function to move enemy infinitely 
-	public void MoveInterval(Enemy enemy, string moveCoordinate, int moveSpeed, int moveDistance)
+	public void MoveInterval(Enemy enemy, PictureBox pic, string moveCoordinate)
 	{
-			enemy.Move();
-	}
+			if (enemy.Health > 0)
+      {
+				while (true)
+				{
+					Console.WriteLine("inside");
+					enemy.GoRight();
+					enemy.Move();
+					pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
+				}
+			}
+			
+		}
 	}
 }

@@ -44,5 +44,32 @@ namespace Fall2020_CSC403_Project.code {
     public void ResetMoveSpeed() {
       MoveSpeed = new Vector2(0, 0);
     }
+
+    public void Moving(string direction, int speed)
+    {
+      switch (direction)
+      {
+        case "left":
+          MoveSpeed = new Vector2(-speed, 0);
+          break;
+
+        case "right":
+          MoveSpeed = new Vector2(+speed, 0);
+          break;        
+        
+        case "up":
+          MoveSpeed = new Vector2(0, -speed);
+          break;      
+        
+        case "down":
+          MoveSpeed = new Vector2(0, +speed);
+          break;
+
+        default:
+          MoveSpeed = new Vector2(0, 0);
+          break;
+      }
+
+    }
   }
 }
