@@ -222,12 +222,15 @@ namespace Fall2020_CSC403_Project {
 	{
 			if (enemy.Health > 0)
       {
+				string curDirection;
+				bool movingLeft = true;
 				while (true)
 				{
-					Console.WriteLine("inside");
-					enemy.GoRight();
-					enemy.Move();
-					pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
+					//Console.WriteLine("inside");
+					//enemy.GoRight();
+					//enemy.Move();
+					//pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
+					if (movingLeft)
 				}
 			}
 			
