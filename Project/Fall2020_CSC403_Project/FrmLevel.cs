@@ -56,8 +56,6 @@ namespace Fall2020_CSC403_Project {
 
 	  // Show player's health bar when the game first loaded
 	  PlayerHealthBar();
-
-			MoveInterval(enemyCheeto, picEnemyCheeto, "x");
 	}
 
 	private Vector2 CreatePosition(PictureBox pic) {
@@ -134,6 +132,9 @@ namespace Fall2020_CSC403_Project {
 
 				// Update player's health while he is moving
 				PlayerHealthBar();
+
+				MoveInterval(enemyCheeto, picEnemyCheeto, "x");
+
 			}
 
 			
@@ -224,14 +225,56 @@ namespace Fall2020_CSC403_Project {
       {
 				string curDirection;
 				bool movingLeft = true;
-				while (true)
-				{
-					//Console.WriteLine("inside");
-					//enemy.GoRight();
-					//enemy.Move();
-					//pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
-					if (movingLeft)
-				}
+
+				//while (enemy.Health > 0)
+				//{
+					if (movingLeft == true) {
+						Console.WriteLine("left");
+					enemy.Move();
+					enemy.GoLeft();
+						
+						pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
+
+						if (HitAWall(enemy))
+						{
+							Console.WriteLine("hit a wall");
+							movingLeft = false;
+						}
+					} else {
+						Console.WriteLine("right");
+						enemy.Move();
+						enemy.GoRight();
+						
+						pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
+
+						if (HitAWall(enemy))
+						{
+							Console.WriteLine("hit a wall");
+							movingLeft = true;
+						}
+					}
+
+          //if (movingLeft)
+          //     {
+          //	enemy.Moving("left", 1);
+          //	enemy.Move();
+          //	pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
+
+          //	if (HitAWall(enemy))
+          //       {
+          //		movingLeft = false;
+          //       }
+          //} else {
+          //	enemy.Moving("right", 1);
+          //	enemy.Move();
+          //	pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
+
+          //	if (HitAWall(enemy))
+          //	{
+          //		movingLeft = true;
+          //	}
+          //}
+        //}
 			}
 			
 		}
