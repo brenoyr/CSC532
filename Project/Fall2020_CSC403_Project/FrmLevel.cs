@@ -33,11 +33,18 @@ namespace Fall2020_CSC403_Project {
 	  enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
 	  enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
 
-	  // create instance of for dead enemy and player
-	  offScreenEnemy = new Enemy(CreatePosition(picOffScreenEnemy), CreateCollider(picOffScreenEnemy, 0));
-	  offScreenPlayer = new Player(CreatePosition(picOffScreenPlayer), CreateCollider(picOffScreenPlayer, 0));
+		// set the initial moving for enemy
+		enemyCheeto.MovingDirection = "left";
+		enemyPoisonPacket.MovingDirection = "up";
 
-	  bossKoolaid.Img = picBossKoolAid.BackgroundImage;
+		// create instance of for dead enemy and player
+		offScreenEnemy = new Enemy(CreatePosition(picOffScreenEnemy), CreateCollider(picOffScreenEnemy, 0));
+	  offScreenPlayer = new Player(CreatePosition(picOffScreenPlayer), CreateCollider(picOffScreenPlayer, 0));
+		offScreenEnemy.Die();
+		offScreenPlayer.Die();
+
+
+		bossKoolaid.Img = picBossKoolAid.BackgroundImage;
 	  enemyPoisonPacket.Img = picEnemyPoisonPacket.BackgroundImage;
 	  enemyCheeto.Img = picEnemyCheeto.BackgroundImage;
 
@@ -85,7 +92,9 @@ namespace Fall2020_CSC403_Project {
 				picPlayer.Hide();
 				player = offScreenPlayer;
 				player.Die();
-			} else
+				PlayerHealthBar();
+			} 
+			else
       {
 				// move player
 				player.Move();
@@ -99,41 +108,61 @@ namespace Fall2020_CSC403_Project {
 				// check collision with enemies
 				if (HitAChar(player, enemyPoisonPacket))
 				{
-					Fight(enemyPoisonPacket);
+					if (enemyPoisonPacket.Health > 0)
+          {
+						Fight(enemyPoisonPacket);
+					}
 				}
-				else if (HitAChar(player, enemyCheeto))
+				if (HitAChar(player, enemyCheeto))
 				{
-					Fight(enemyCheeto);
+					if (enemyCheeto.Health > 0)
+          {
+						Fight(enemyCheeto);
+					} 
 				}
 				if (HitAChar(player, bossKoolaid))
 				{
-					Fight(bossKoolaid);
+					if (bossKoolaid.Health > 0)
+          {
+						player.MoveBack();
+						Fight(bossKoolaid);
+					}
 				}
 
 				// update player's picture box
 				picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 
-				// Remove the dead enemies' images
-				if (IsDead(enemyPoisonPacket))
+        //Remove the dead enemies' images
+        if (IsDead(enemyPoisonPacket))
+        {
+          picEnemyPoisonPacket.Hide();
+          enemyPoisonPacket = offScreenEnemy;
+        }
+        if (IsDead(enemyCheeto))
+        {
+					Console.WriteLine(enemyCheeto.Health);
+          picEnemyCheeto.Hide();
+          enemyCheeto = offScreenEnemy;
+        }
+        if (IsDead(bossKoolaid))
+        {
+          picBossKoolAid.Hide();
+          bossKoolaid = offScreenEnemy;
+        }
+
+        // Update player's health while he is moving
+        PlayerHealthBar();
+
+				// call function for enemies moving infinitely
+				if (enemyPoisonPacket.Health > 0 && !HitAChar(player, enemyPoisonPacket))
 				{
-					picEnemyPoisonPacket.Hide();
-					enemyPoisonPacket = offScreenEnemy;
+					MoveInterval(enemyPoisonPacket, picEnemyPoisonPacket, "y", 2);
 				}
-				else if (IsDead(enemyCheeto))
-				{
-					picEnemyCheeto.Hide();
-					enemyCheeto = offScreenEnemy;
-				}
-				else if (IsDead(bossKoolaid))
-				{
-					picBossKoolAid.Hide();
-					bossKoolaid = offScreenEnemy;
+				if (enemyCheeto.Health > 0 && !HitAChar(player, enemyCheeto))
+        {
+					MoveInterval(enemyCheeto, picEnemyCheeto, "x", 1);
 				}
 
-				// Update player's health while he is moving
-				PlayerHealthBar();
-
-				MoveInterval(enemyCheeto, picEnemyCheeto, "x");
 
 			}
 
@@ -157,8 +186,8 @@ namespace Fall2020_CSC403_Project {
 
 	private void Fight(Enemy enemy) {
 	  player.ResetMoveSpeed();
-	  player.MoveBack();
-	  frmBattle = FrmBattle.GetInstance(enemy);
+	  //player.MoveBack();
+		frmBattle = FrmBattle.GetInstance(enemy);
 	  frmBattle.Show();
 
 	  if (enemy == bossKoolaid) {
@@ -218,65 +247,69 @@ namespace Fall2020_CSC403_Project {
 		return isDead;
 	}
 
-	// Function to move enemy infinitely 
-	public void MoveInterval(Enemy enemy, PictureBox pic, string moveCoordinate)
-	{
-			if (enemy.Health > 0)
+		//=======================================================================================
+		// Function to move enemy infinitely 
+		public void MoveInterval(Enemy enemy, PictureBox pic, string moveCoordinate, int speed)
+		{
+			if (moveCoordinate == "x")
       {
-				string curDirection;
-				bool movingLeft = true;
-
-				//while (enemy.Health > 0)
-				//{
-					if (movingLeft == true) {
-						Console.WriteLine("left");
+				if (enemy.MovingDirection == "left")
+				{
+					enemy.Moving("left", speed);
 					enemy.Move();
-					enemy.GoLeft();
-						
-						pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
+					Console.WriteLine("left");
+					pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
 
-						if (HitAWall(enemy))
-						{
-							Console.WriteLine("hit a wall");
-							movingLeft = false;
-						}
-					} else {
-						Console.WriteLine("right");
-						enemy.Move();
-						enemy.GoRight();
-						
-						pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
-
-						if (HitAWall(enemy))
-						{
-							Console.WriteLine("hit a wall");
-							movingLeft = true;
-						}
+					if (HitAWall(enemy))
+					{
+						enemy.MovingDirection = "right";
+						enemy.MoveBack();
 					}
+				}
+				else
+				{
+					enemy.Moving("right", speed);
+					enemy.Move();
+					Console.WriteLine("right");
+					pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
 
-          //if (movingLeft)
-          //     {
-          //	enemy.Moving("left", 1);
-          //	enemy.Move();
-          //	pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
-
-          //	if (HitAWall(enemy))
-          //       {
-          //		movingLeft = false;
-          //       }
-          //} else {
-          //	enemy.Moving("right", 1);
-          //	enemy.Move();
-          //	pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
-
-          //	if (HitAWall(enemy))
-          //	{
-          //		movingLeft = true;
-          //	}
-          //}
-        //}
-			}
+					if (HitAWall(enemy))
+					{
+						enemy.MovingDirection = "left";
+						enemy.MoveBack();
+					}
+				}
+			} 
 			
+			else if (moveCoordinate == "y")
+      {
+				if (enemy.MovingDirection == "up")
+				{
+					enemy.Moving("up", speed);
+					enemy.Move();
+					pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
+
+					if (HitAWall(enemy))
+					{
+						enemy.MovingDirection = "down";
+						enemy.MoveBack();
+					}
+				}
+				else
+				{
+					enemy.Moving("down", speed);
+					enemy.Move();
+					pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
+
+					if (HitAWall(enemy))
+					{
+						enemy.MovingDirection = "up";
+						enemy.MoveBack();
+					}
+				}
+			}
 		}
+	
+	
 	}
 }
