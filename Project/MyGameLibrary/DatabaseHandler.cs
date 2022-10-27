@@ -46,6 +46,9 @@ namespace MyGameLibrary
             // Insert statistics model with values it is currently holding 
             await DatabaseHandler.get_statistics_collection().InsertOneAsync(new StatisticsDatabaseModel
             {
+                TotalLevelsGained = StatisticsModel.TotalLevelsGained,
+                TotalHealthGained = StatisticsModel.TotalHealthGained,
+                TotalExperienceGained = StatisticsModel.TotalExperienceGained,
                 DamageDone = StatisticsModel.DamageDone,
                 DamageTaken = StatisticsModel.DamageTaken,
                 DistanceTraveled = StatisticsModel.DistanceTraveled
