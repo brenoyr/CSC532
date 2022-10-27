@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyGameLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,11 @@ namespace Fall2020_CSC403_Project.code {
 	public event Action<int> AttackEvent;
 
 	public BattleCharacter(Vector2 initPos, Collider collider) : base(initPos, collider) {
-	  MaxHealth = 20;
-	  strength = 2;
-	  experience = 0;
-		level = 1;
-	  Health = MaxHealth;
+		    MaxHealth = 20;
+		    strength = 2;
+		    experience = 0;
+		    level = 1;
+		    Health = MaxHealth;
 	}
 
 	public void OnAttack(int amount) {
@@ -36,10 +37,12 @@ namespace Fall2020_CSC403_Project.code {
 		switch (enemyType) {
 			case "regular":
 				experience += 50;
+				StatisticsModel.TotalExperienceGained += 50;
 				break;
 
 			case "boss":
 				experience += 100;
+				StatisticsModel.TotalExperienceGained += 100;
 				break;
 
 			default:
@@ -52,11 +55,18 @@ namespace Fall2020_CSC403_Project.code {
 	}
 
 	public void LevelUp() {
-      MaxHealth += 10;
-      Health = MaxHealth;
-      strength += 1;
-      level += 1;
-      experience -= 100;
+		MaxHealth += 10;
+		Health = MaxHealth;
+		strength += 1;
+		level += 1;
+		experience -= 100;
+
+		StatisticsModel.TotalLevelsGained += 1;
+		StatisticsModel.TotalHealthGained += 10;
+		StatisticsModel.TotalStrengthGained += 1;
+
+		
+
     }
 
   // Function set dead character's health to 0

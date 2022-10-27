@@ -39,13 +39,13 @@ namespace MyGameLibrary
         public async static void insert_statistics()
         {
 
-            Console.WriteLine("Inserting statistics");
-            Console.WriteLine("Damage Done: " + StatisticsModel.DamageDone);
-            Console.WriteLine("Damage Taken: " + StatisticsModel.DamageTaken);
-            Console.WriteLine("Distance Traveled: " + StatisticsModel.DistanceTraveled);
             // Insert statistics model with values it is currently holding 
             await DatabaseHandler.get_statistics_collection().InsertOneAsync(new StatisticsDatabaseModel
             {
+                TotalLevelsGained = StatisticsModel.TotalLevelsGained,
+                TotalHealthGained = StatisticsModel.TotalHealthGained,
+                TotalExperienceGained = StatisticsModel.TotalExperienceGained,
+                TotalStrengthGained = StatisticsModel.TotalStrengthGained,
                 DamageDone = StatisticsModel.DamageDone,
                 DamageTaken = StatisticsModel.DamageTaken,
                 DistanceTraveled = StatisticsModel.DistanceTraveled
