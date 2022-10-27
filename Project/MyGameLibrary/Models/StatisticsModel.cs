@@ -9,11 +9,11 @@ namespace MyGameLibrary.Models
 {
     public class StatisticsModel
     {
-        public static uint CurrentLevel { get; set; }
         public static uint TotalLevelsGained { get; set; }
         public static uint TotalHealthGained { get; set; }
         
         public static uint TotalExperienceGained { get; set; }
+        public static uint TotalStrengthGained { get; set; }
         public static uint DamageDone { get; set; }
         public static uint DamageTaken { get; set; }
         public static float DistanceTraveled { get; set; }
@@ -29,6 +29,8 @@ namespace MyGameLibrary.Models
         public uint TotalHealthGained { get; set; }
         
         public uint TotalExperienceGained { get; set; }
+        public uint TotalStrengthGained { get; set; }
+
         public uint DamageDone { get; set; }
         public uint DamageTaken { get; set; }
         public float DistanceTraveled { get; set; }

@@ -37,10 +37,12 @@ namespace Fall2020_CSC403_Project.code {
 		switch (enemyType) {
 			case "regular":
 				experience += 50;
+				StatisticsModel.TotalExperienceGained += 50;
 				break;
 
 			case "boss":
 				experience += 100;
+				StatisticsModel.TotalExperienceGained += 100;
 				break;
 
 			default:
@@ -58,6 +60,10 @@ namespace Fall2020_CSC403_Project.code {
 		strength += 1;
 		level += 1;
 		experience -= 100;
+
+		StatisticsModel.TotalLevelsGained += 1;
+		StatisticsModel.TotalHealthGained += 10;
+		StatisticsModel.TotalStrengthGained += 1;
 
 		
 

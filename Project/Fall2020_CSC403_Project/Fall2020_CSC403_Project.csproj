@@ -146,6 +146,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StatsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatsWindow.Designer.cs">
+      <DependentUpon>StatsWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBattle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="StatsWindow.resx">
+      <DependentUpon>StatsWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBattle.resx">
       <DependentUpon>FrmBattle.cs</DependentUpon>
     </EmbeddedResource>

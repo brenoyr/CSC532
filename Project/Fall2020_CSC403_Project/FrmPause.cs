@@ -36,16 +36,15 @@ namespace Fall2020_CSC403_Project
 
         private void btnShow_Statistics(object sender, EventArgs e)
         {
-            var stats = DatabaseHandler.get_latest_statistics();
+            // Disable button
+            this.btnStats.Enabled = false;
+            // TODO show stats window
+            StatsWindow stats = new StatsWindow();
+            stats.setBtn(this.btnStats);
+            stats.Show();
 
-            Console.WriteLine("Damage Taken");
-            Console.WriteLine(stats.DamageTaken);
-            Console.WriteLine("Damage Dealt");
-            Console.WriteLine(stats.DamageDone);
-            Console.WriteLine("Distance Traveled");
-            Console.WriteLine(stats.DistanceTraveled);
-            // TODO show new window
         }
+        
 
         private void btnQuit_Click(object sender, EventArgs e)
     {
