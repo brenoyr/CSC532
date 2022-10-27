@@ -47,7 +47,7 @@ namespace Fall2020_CSC403_Project {
 
 		// create instance of for dead enemy and player
 		offScreenEnemy = new Enemy(CreatePosition(picOffScreenEnemy), CreateCollider(picOffScreenEnemy, 0));
-	  	offScreenPlayer = new Player(CreatePosition(picOffScreenPlayer), CreateCollider(picOffScreenPlayer, 0));
+	  offScreenPlayer = new Player(CreatePosition(picOffScreenPlayer), CreateCollider(picOffScreenPlayer, 0));
 		offScreenEnemy.Die();
 		offScreenPlayer.Die();
 

@@ -153,7 +153,6 @@ namespace Fall2020_CSC403_Project {
             this.picWall2.Size = new System.Drawing.Size(469, 67);
             this.picWall2.TabIndex = 16;
             this.picWall2.TabStop = false;
-            this.picWall2.Click += new System.EventHandler(this.picWall2_Click);
             // 
             // picOffScreenPlayer
             // 
@@ -348,7 +347,6 @@ namespace Fall2020_CSC403_Project {
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
-            this.picPlayer.Click += new System.EventHandler(this.picPlayer_Click);
             // 
             // medkit1
             // 
