@@ -129,53 +129,39 @@ namespace Fall2020_CSC403_Project {
 			// check collision with walls
 			if (HitAWall(player))
 			{
-				picPlayer.Hide();
-				player = offScreenPlayer;
-				player.Die();
-				PlayerHealthBar();
-			} 
-			else
-      		{
-				// move player
-				player.Move();
-
-				// check collision with walls
-				if (HitAWall(player))
-				{
-					player.MoveBack();
-				}
-
-				// check collision with enemies
-				if (HitAChar(player, enemyPoisonPacket))
-				{
-					if (enemyPoisonPacket.Health > 0)
-          			{
-						Fight(enemyPoisonPacket);
-					}
-				}
-				if (HitAChar(player, enemyCheeto))
-				{
-					if (enemyCheeto.Health > 0)
-          			{
-						Fight(enemyCheeto);
-					} 
-				}
-				if (HitAChar(player, bossKoolaid))
-				{
-					if (bossKoolaid.Health > 0)
-          			{
-						player.MoveBack();
-						Fight(bossKoolaid);
-					}
-				}
-				if (HitAMedkit(player)) 
-				{ 
-					PlayerHealthBar();
-				}
-
-				// update player's picture box
-				picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+				player.MoveBack();
 			}
+
+			// check collision with enemies
+			if (HitAChar(player, enemyPoisonPacket))
+			{
+				if (enemyPoisonPacket.Health > 0)
+          		{
+					Fight(enemyPoisonPacket);
+				}
+			}
+			if (HitAChar(player, enemyCheeto))
+			{
+				if (enemyCheeto.Health > 0)
+          		{
+					Fight(enemyCheeto);
+				} 
+			}
+			if (HitAChar(player, bossKoolaid))
+			{
+				if (bossKoolaid.Health > 0)
+          		{
+					player.MoveBack();
+					Fight(bossKoolaid);
+				}
+			}
+			if (HitAMedkit(player)) 
+			{ 
+				PlayerHealthBar();
+			}
+
+			// update player's picture box
+			picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
 		}
 
         //Remove the dead enemies' images
