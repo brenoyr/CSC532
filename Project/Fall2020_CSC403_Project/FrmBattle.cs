@@ -11,7 +11,6 @@ namespace Fall2020_CSC403_Project {
     public static FrmBattle instance = null;
     private Enemy enemy;
     private Player player;
-    private FrmDeath frmDeath;
 
     private FrmBattle() {
       InitializeComponent();
@@ -68,12 +67,12 @@ namespace Fall2020_CSC403_Project {
     private void btnAttack_Click(object sender, EventArgs e) {
       player.OnAttack(-4);
       if (enemy.Health > 0) {
-        enemy.OnAttack(-2); //-2
+        enemy.OnAttack(-2);
       }
 
       UpdateHealthBars();
       if (player.Health <= 0) {
-        ShowDeathMenu(); // show game over screen
+        // TODO: show game over screen
         instance = null;
         Close();
       }
@@ -82,14 +81,6 @@ namespace Fall2020_CSC403_Project {
         instance = null;
         Close();
       }
-    }
-
-    private void ShowDeathMenu()
-    {
-        frmDeath = new FrmDeath();
-        // removes the options to minimize/resize/close the window so the user has to make a choice
-        frmDeath.ControlBox = false;
-        frmDeath.ShowDialog(); // ShowDialog() disables game window
     }
 
     private void EnemyDamage(int amount) {
