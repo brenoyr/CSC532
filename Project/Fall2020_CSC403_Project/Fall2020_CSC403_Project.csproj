@@ -151,6 +151,11 @@
     </Compile>
     <Compile Include="StatsWindow.Designer.cs">
       <DependentUpon>StatsWindow.cs</DependentUpon>
+    <Compile Include="FrmDeath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDeath.Designer.cs">
+      <DependentUpon>FrmDeath.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBattle.cs">
       <SubType>Form</SubType>
@@ -177,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBattle.resx">
       <DependentUpon>FrmBattle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDeath.resx">
+      <DependentUpon>FrmDeath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLevel.resx">
       <DependentUpon>FrmLevel.cs</DependentUpon>
@@ -235,7 +243,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="code\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyGameLibrary\MyGameLibrary.csproj">
@@ -245,6 +252,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\medkit.png" />
+    <None Include="Resources\dead.png" />
+    <None Include="Resources\back_walk.gif" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\back_side.gif" />
+    <None Include="Resources\side4.gif" />
+    <None Include="Resources\still2.png" />
+    <None Include="Resources\testing6.gif" />
+    <None Include="Resources\player_still_forward.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.6.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.6.0\build\MongoDB.Libmongocrypt.targets')" />
