@@ -343,7 +343,6 @@ namespace Fall2020_CSC403_Project {
 			{
 				enemy.Moving("left", speed);
 				enemy.Move();
-				Console.WriteLine("left");
 				pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
 
 				if (HitAWall(enemy))
@@ -356,7 +355,6 @@ namespace Fall2020_CSC403_Project {
 			{
 				enemy.Moving("right", speed);
 				enemy.Move();
-				Console.WriteLine("right");
 				pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
 
 				if (HitAWall(enemy))
