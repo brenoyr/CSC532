@@ -152,6 +152,7 @@
     <Compile Include="Collider.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Models\SavesModel.cs" />
     <Compile Include="Models\StatisticsModel.cs" />
     <Compile Include="NPC.cs" />
     <Compile Include="Player.cs" />

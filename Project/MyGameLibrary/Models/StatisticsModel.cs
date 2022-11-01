@@ -9,6 +9,7 @@ namespace MyGameLibrary.Models
 {
     public class StatisticsModel
     {
+        public static string GameSaveId { get; set; }
         public static uint TotalLevelsGained { get; set; }
         public static uint TotalHealthGained { get; set; }
         
@@ -18,6 +19,7 @@ namespace MyGameLibrary.Models
         public static uint DamageTaken { get; set; }
         public static float DistanceTraveled { get; set; }
 
+
     }
 
     public class StatisticsDatabaseModel
@@ -25,6 +27,8 @@ namespace MyGameLibrary.Models
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string Id { get; set; }
+        [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
+        public string GameSaveId { get; set; }
         public uint TotalLevelsGained { get; set; }
         public uint TotalHealthGained { get; set; }
         

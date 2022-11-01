@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyGameLibrary;
+using MyGameLibrary.Models;
 
 namespace Fall2020_CSC403_Project
 {
@@ -18,13 +19,14 @@ namespace Fall2020_CSC403_Project
         {
             
             InitializeComponent();
-            update_data();
+            update_data(false);
         }
 
-        private void update_data()
+        private void update_data(bool save_just_loaded)
         {
 
             var data = DatabaseHandler.get_latest_statistics();
+            
 
             this.DamageDoneData.Text = data.DamageDone.ToString();
             this.DamageTakenData.Text = data.DamageTaken.ToString();
@@ -33,6 +35,7 @@ namespace Fall2020_CSC403_Project
             this.HealthGainedData.Text = data.TotalHealthGained.ToString();
             this.LevelsGainedData.Text = data.TotalLevelsGained.ToString();
             
+
             // Format distance traveled as ###,###
             var distance = data.DistanceTraveled / 100;
             this.DistanceTraveledData.Text = distance.ToString("N0") + " m";
