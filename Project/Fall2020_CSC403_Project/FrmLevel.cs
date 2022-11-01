@@ -3,6 +3,8 @@ using MyGameLibrary;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using MyGameLibrary.Models;
+using System.Collections.Generic;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
@@ -27,6 +29,8 @@ namespace Fall2020_CSC403_Project {
 	private int MEDKIT_VALUE;
 
 	public FrmLevel() {
+       
+      
 	  InitializeComponent();
 	}
 
@@ -126,6 +130,12 @@ namespace Fall2020_CSC403_Project {
 			// move player
 			player.Move();
 
+			Dictionary<string, float> playerPos = new Dictionary<string, float>();
+			playerPos.Add("x", player.Position.x);
+			playerPos.Add("y", player.Position.y);
+            SaveModel.PlayerPosition = playerPos;
+
+                
 			// check collision with walls
 			if (HitAWall(player))
 			{
@@ -162,6 +172,7 @@ namespace Fall2020_CSC403_Project {
 
 			// update player's picture box
 			picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+            
 		}
 
         //Remove the dead enemies' images
@@ -195,7 +206,15 @@ namespace Fall2020_CSC403_Project {
 		}
 	}
 
-	private bool HitAWall(Character c) {
+		public void set_save()
+		{
+			
+            player.Position = new Vector2(SaveModel.PlayerPosition["x"], SaveModel.PlayerPosition["y"]);
+            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+
+        }
+
+        private bool HitAWall(Character c) {
 	  bool hitAWall = false;
 	  for (int w = 0; w < walls.Length; w++) {
 		if (c.Collider.Intersects(walls[w].Collider)) {
@@ -343,7 +362,6 @@ namespace Fall2020_CSC403_Project {
 			{
 				enemy.Moving("left", speed);
 				enemy.Move();
-				Console.WriteLine("left");
 				pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
 
 				if (HitAWall(enemy))
@@ -356,7 +374,6 @@ namespace Fall2020_CSC403_Project {
 			{
 				enemy.Moving("right", speed);
 				enemy.Move();
-				Console.WriteLine("right");
 				pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
 
 				if (HitAWall(enemy))
@@ -395,7 +412,9 @@ namespace Fall2020_CSC403_Project {
 			}
 		}
 	}
-  }
-	
+
+
+    }
+
 }
 
