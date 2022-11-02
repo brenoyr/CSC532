@@ -33,6 +33,9 @@ namespace Fall2020_CSC403_Project {
       this.lblPlayerHealthFull = new System.Windows.Forms.Label();
       this.lblPlayerHealthFullBlack = new System.Windows.Forms.Label();
       this.HPlabel = new System.Windows.Forms.Label();
+      this.picEnemyPoisonPacket = new System.Windows.Forms.PictureBox();
+      this.picEnemyCheeto = new System.Windows.Forms.PictureBox();
+      this.medkit1 = new System.Windows.Forms.PictureBox();
       this.medkit0 = new System.Windows.Forms.PictureBox();
       this.picWall2 = new System.Windows.Forms.PictureBox();
       this.picOffScreenPlayer = new System.Windows.Forms.PictureBox();
@@ -48,12 +51,12 @@ namespace Fall2020_CSC403_Project {
       this.picWall12 = new System.Windows.Forms.PictureBox();
       this.picWall4 = new System.Windows.Forms.PictureBox();
       this.picWall5 = new System.Windows.Forms.PictureBox();
-      this.picEnemyCheeto = new System.Windows.Forms.PictureBox();
-      this.picEnemyPoisonPacket = new System.Windows.Forms.PictureBox();
       this.picWall3 = new System.Windows.Forms.PictureBox();
       this.picBossKoolAid = new System.Windows.Forms.PictureBox();
       this.picPlayer = new System.Windows.Forms.PictureBox();
-      this.medkit1 = new System.Windows.Forms.PictureBox();
+      ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.medkit1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.medkit0)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picOffScreenPlayer)).BeginInit();
@@ -69,12 +72,9 @@ namespace Fall2020_CSC403_Project {
       ((System.ComponentModel.ISupportInitialize)(this.picWall12)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall4)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.medkit1)).BeginInit();
       this.SuspendLayout();
       // 
       // lblInGameTime
@@ -103,7 +103,7 @@ namespace Fall2020_CSC403_Project {
       // 
       // lblPlayerHealthFull
       // 
-      this.lblPlayerHealthFull.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+      this.lblPlayerHealthFull.BackColor = System.Drawing.Color.Maroon;
       this.lblPlayerHealthFull.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblPlayerHealthFull.ForeColor = System.Drawing.Color.White;
       this.lblPlayerHealthFull.Location = new System.Drawing.Point(712, 57);
@@ -135,10 +135,45 @@ namespace Fall2020_CSC403_Project {
       this.HPlabel.Text = "Player HP";
       this.HPlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       // 
+      // picEnemyPoisonPacket
+      // 
+      this.picEnemyPoisonPacket.BackColor = System.Drawing.Color.Transparent;
+      this.picEnemyPoisonPacket.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_poisonpacket;
+      this.picEnemyPoisonPacket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picEnemyPoisonPacket.Location = new System.Drawing.Point(293, 234);
+      this.picEnemyPoisonPacket.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+      this.picEnemyPoisonPacket.Name = "picEnemyPoisonPacket";
+      this.picEnemyPoisonPacket.Size = new System.Drawing.Size(168, 229);
+      this.picEnemyPoisonPacket.TabIndex = 4;
+      this.picEnemyPoisonPacket.TabStop = false;
+      // 
+      // picEnemyCheeto
+      // 
+      this.picEnemyCheeto.BackColor = System.Drawing.Color.Transparent;
+      this.picEnemyCheeto.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_cheetos;
+      this.picEnemyCheeto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picEnemyCheeto.Location = new System.Drawing.Point(2235, 1288);
+      this.picEnemyCheeto.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+      this.picEnemyCheeto.Name = "picEnemyCheeto";
+      this.picEnemyCheeto.Size = new System.Drawing.Size(171, 255);
+      this.picEnemyCheeto.TabIndex = 5;
+      this.picEnemyCheeto.TabStop = false;
+      // 
+      // medkit1
+      // 
+      this.medkit1.Image = global::Fall2020_CSC403_Project.Properties.Resources.medkit;
+      this.medkit1.Location = new System.Drawing.Point(2757, 1388);
+      this.medkit1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+      this.medkit1.Name = "medkit1";
+      this.medkit1.Size = new System.Drawing.Size(141, 162);
+      this.medkit1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+      this.medkit1.TabIndex = 24;
+      this.medkit1.TabStop = false;
+      // 
       // medkit0
       // 
       this.medkit0.Image = global::Fall2020_CSC403_Project.Properties.Resources.medkit;
-      this.medkit0.Location = new System.Drawing.Point(1421, 234);
+      this.medkit0.Location = new System.Drawing.Point(309, 155);
       this.medkit0.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.medkit0.Name = "medkit0";
       this.medkit0.Size = new System.Drawing.Size(141, 162);
@@ -149,8 +184,7 @@ namespace Fall2020_CSC403_Project {
       // picWall2
       // 
       this.picWall2.BackColor = System.Drawing.Color.Transparent;
-      this.picWall2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall2.Location = new System.Drawing.Point(1469, 2);
       this.picWall2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall2.Name = "picWall2";
@@ -179,8 +213,7 @@ namespace Fall2020_CSC403_Project {
       // picWall11
       // 
       this.picWall11.BackColor = System.Drawing.Color.Transparent;
-      this.picWall11.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall11.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall11.Location = new System.Drawing.Point(1469, 1013);
       this.picWall11.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall11.Name = "picWall11";
@@ -191,8 +224,7 @@ namespace Fall2020_CSC403_Project {
       // picWall8
       // 
       this.picWall8.BackColor = System.Drawing.Color.Transparent;
-      this.picWall8.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall8.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall8.Location = new System.Drawing.Point(2915, 653);
       this.picWall8.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall8.Name = "picWall8";
@@ -203,8 +235,7 @@ namespace Fall2020_CSC403_Project {
       // picWall7
       // 
       this.picWall7.BackColor = System.Drawing.Color.Transparent;
-      this.picWall7.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall7.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall7.Location = new System.Drawing.Point(1904, 1564);
       this.picWall7.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall7.Name = "picWall7";
@@ -215,8 +246,7 @@ namespace Fall2020_CSC403_Project {
       // picWall1
       // 
       this.picWall1.BackColor = System.Drawing.Color.Transparent;
-      this.picWall1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall1.Location = new System.Drawing.Point(221, 2);
       this.picWall1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall1.Name = "picWall1";
@@ -227,8 +257,7 @@ namespace Fall2020_CSC403_Project {
       // picWall0
       // 
       this.picWall0.BackColor = System.Drawing.Color.Transparent;
-      this.picWall0.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall0.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall0.Location = new System.Drawing.Point(5, 2);
       this.picWall0.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall0.Name = "picWall0";
@@ -239,8 +268,7 @@ namespace Fall2020_CSC403_Project {
       // picWall10
       // 
       this.picWall10.BackColor = System.Drawing.Color.Transparent;
-      this.picWall10.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall10.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall10.Location = new System.Drawing.Point(1741, 212);
       this.picWall10.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall10.Name = "picWall10";
@@ -251,8 +279,7 @@ namespace Fall2020_CSC403_Project {
       // picWall9
       // 
       this.picWall9.BackColor = System.Drawing.Color.Transparent;
-      this.picWall9.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall9.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall9.Location = new System.Drawing.Point(723, 317);
       this.picWall9.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall9.Name = "picWall9";
@@ -263,8 +290,7 @@ namespace Fall2020_CSC403_Project {
       // picWall6
       // 
       this.picWall6.BackColor = System.Drawing.Color.Transparent;
-      this.picWall6.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall6.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall6.Location = new System.Drawing.Point(952, 1564);
       this.picWall6.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall6.Name = "picWall6";
@@ -275,8 +301,7 @@ namespace Fall2020_CSC403_Project {
       // picWall12
       // 
       this.picWall12.BackColor = System.Drawing.Color.Transparent;
-      this.picWall12.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall12.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall12.Location = new System.Drawing.Point(2373, 947);
       this.picWall12.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall12.Name = "picWall12";
@@ -287,8 +312,7 @@ namespace Fall2020_CSC403_Project {
       // picWall4
       // 
       this.picWall4.BackColor = System.Drawing.Color.Transparent;
-      this.picWall4.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall4.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall4.Location = new System.Drawing.Point(5, 1083);
       this.picWall4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall4.Name = "picWall4";
@@ -299,8 +323,7 @@ namespace Fall2020_CSC403_Project {
       // picWall5
       // 
       this.picWall5.BackColor = System.Drawing.Color.Transparent;
-      this.picWall5.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall5.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall5.Location = new System.Drawing.Point(5, 1564);
       this.picWall5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall5.Name = "picWall5";
@@ -308,35 +331,10 @@ namespace Fall2020_CSC403_Project {
       this.picWall5.TabIndex = 6;
       this.picWall5.TabStop = false;
       // 
-      // picEnemyCheeto
-      // 
-      this.picEnemyCheeto.BackColor = System.Drawing.Color.Transparent;
-      this.picEnemyCheeto.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_cheetos;
-      this.picEnemyCheeto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picEnemyCheeto.Location = new System.Drawing.Point(2235, 1288);
-      this.picEnemyCheeto.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-      this.picEnemyCheeto.Name = "picEnemyCheeto";
-      this.picEnemyCheeto.Size = new System.Drawing.Size(171, 255);
-      this.picEnemyCheeto.TabIndex = 5;
-      this.picEnemyCheeto.TabStop = false;
-      // 
-      // picEnemyPoisonPacket
-      // 
-      this.picEnemyPoisonPacket.BackColor = System.Drawing.Color.Transparent;
-      this.picEnemyPoisonPacket.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.enemy_poisonpacket;
-      this.picEnemyPoisonPacket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.picEnemyPoisonPacket.Location = new System.Drawing.Point(293, 234);
-      this.picEnemyPoisonPacket.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-      this.picEnemyPoisonPacket.Name = "picEnemyPoisonPacket";
-      this.picEnemyPoisonPacket.Size = new System.Drawing.Size(168, 229);
-      this.picEnemyPoisonPacket.TabIndex = 4;
-      this.picEnemyPoisonPacket.TabStop = false;
-      // 
       // picWall3
       // 
       this.picWall3.BackColor = System.Drawing.Color.Transparent;
-      this.picWall3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
-      this.picWall3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picWall3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
       this.picWall3.Location = new System.Drawing.Point(5, 925);
       this.picWall3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
       this.picWall3.Name = "picWall3";
@@ -367,17 +365,6 @@ namespace Fall2020_CSC403_Project {
       this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
       this.picPlayer.TabIndex = 0;
       this.picPlayer.TabStop = false;
-      // 
-      // medkit1
-      // 
-      this.medkit1.Image = global::Fall2020_CSC403_Project.Properties.Resources.medkit;
-      this.medkit1.Location = new System.Drawing.Point(2757, 1388);
-      this.medkit1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-      this.medkit1.Name = "medkit1";
-      this.medkit1.Size = new System.Drawing.Size(141, 162);
-      this.medkit1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-      this.medkit1.TabIndex = 24;
-      this.medkit1.TabStop = false;
       // 
       // FrmLevel
       // 
@@ -420,6 +407,9 @@ namespace Fall2020_CSC403_Project {
       this.Load += new System.EventHandler(this.FrmLevel_Load);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
       this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
+      ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.medkit1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.medkit0)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picOffScreenPlayer)).EndInit();
@@ -435,12 +425,9 @@ namespace Fall2020_CSC403_Project {
       ((System.ComponentModel.ISupportInitialize)(this.picWall12)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.medkit1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

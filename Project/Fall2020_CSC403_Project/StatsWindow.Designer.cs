@@ -57,7 +57,7 @@ namespace Fall2020_CSC403_Project
       this.label1.Location = new System.Drawing.Point(64, 20);
       this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(540, 55);
+      this.label1.Size = new System.Drawing.Size(1346, 138);
       this.label1.TabIndex = 0;
       this.label1.Text = "GENERAL PLAYTHROUGH STATS";
       // 
@@ -77,7 +77,7 @@ namespace Fall2020_CSC403_Project
       this.label3.ForeColor = System.Drawing.SystemColors.Control;
       this.label3.Location = new System.Drawing.Point(68, 148);
       this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(213, 31);
+      this.label3.Size = new System.Drawing.Size(524, 77);
       this.label3.TabIndex = 2;
       this.label3.Text = "Total Damage Done: ";
       // 
@@ -88,7 +88,7 @@ namespace Fall2020_CSC403_Project
       this.label4.ForeColor = System.Drawing.SystemColors.Control;
       this.label4.Location = new System.Drawing.Point(68, 192);
       this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(217, 31);
+      this.label4.Size = new System.Drawing.Size(533, 77);
       this.label4.TabIndex = 3;
       this.label4.Text = "Total Damage Taken:";
       // 
@@ -99,7 +99,7 @@ namespace Fall2020_CSC403_Project
       this.label5.ForeColor = System.Drawing.SystemColors.Control;
       this.label5.Location = new System.Drawing.Point(68, 326);
       this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(248, 31);
+      this.label5.Size = new System.Drawing.Size(613, 77);
       this.label5.TabIndex = 4;
       this.label5.Text = "Total Experience Gained:";
       // 
@@ -110,7 +110,7 @@ namespace Fall2020_CSC403_Project
       this.label6.ForeColor = System.Drawing.SystemColors.Control;
       this.label6.Location = new System.Drawing.Point(68, 368);
       this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(228, 31);
+      this.label6.Size = new System.Drawing.Size(566, 77);
       this.label6.TabIndex = 5;
       this.label6.Text = "Total Strength Gained:";
       // 
@@ -121,7 +121,7 @@ namespace Fall2020_CSC403_Project
       this.label7.ForeColor = System.Drawing.SystemColors.Control;
       this.label7.Location = new System.Drawing.Point(68, 502);
       this.label7.Name = "label7";
-      this.label7.Size = new System.Drawing.Size(242, 31);
+      this.label7.Size = new System.Drawing.Size(600, 77);
       this.label7.TabIndex = 6;
       this.label7.Text = "Total Distance Traveled:";
       // 
@@ -132,7 +132,7 @@ namespace Fall2020_CSC403_Project
       this.DamageDoneData.ForeColor = System.Drawing.SystemColors.Control;
       this.DamageDoneData.Location = new System.Drawing.Point(578, 148);
       this.DamageDoneData.Name = "DamageDoneData";
-      this.DamageDoneData.Size = new System.Drawing.Size(26, 31);
+      this.DamageDoneData.Size = new System.Drawing.Size(62, 77);
       this.DamageDoneData.TabIndex = 7;
       this.DamageDoneData.Text = "0";
       // 
@@ -143,7 +143,7 @@ namespace Fall2020_CSC403_Project
       this.DamageTakenData.ForeColor = System.Drawing.SystemColors.Control;
       this.DamageTakenData.Location = new System.Drawing.Point(578, 192);
       this.DamageTakenData.Name = "DamageTakenData";
-      this.DamageTakenData.Size = new System.Drawing.Size(26, 31);
+      this.DamageTakenData.Size = new System.Drawing.Size(62, 77);
       this.DamageTakenData.TabIndex = 8;
       this.DamageTakenData.Text = "0";
       // 
@@ -154,7 +154,7 @@ namespace Fall2020_CSC403_Project
       this.ExperienceGainedData.ForeColor = System.Drawing.SystemColors.Control;
       this.ExperienceGainedData.Location = new System.Drawing.Point(578, 326);
       this.ExperienceGainedData.Name = "ExperienceGainedData";
-      this.ExperienceGainedData.Size = new System.Drawing.Size(26, 31);
+      this.ExperienceGainedData.Size = new System.Drawing.Size(62, 77);
       this.ExperienceGainedData.TabIndex = 9;
       this.ExperienceGainedData.Text = "0";
       // 
@@ -165,7 +165,7 @@ namespace Fall2020_CSC403_Project
       this.StrengthGainedData.ForeColor = System.Drawing.SystemColors.Control;
       this.StrengthGainedData.Location = new System.Drawing.Point(578, 368);
       this.StrengthGainedData.Name = "StrengthGainedData";
-      this.StrengthGainedData.Size = new System.Drawing.Size(26, 31);
+      this.StrengthGainedData.Size = new System.Drawing.Size(62, 77);
       this.StrengthGainedData.TabIndex = 10;
       this.StrengthGainedData.Text = "0";
       // 
@@ -176,7 +176,7 @@ namespace Fall2020_CSC403_Project
       this.DistanceTraveledData.ForeColor = System.Drawing.SystemColors.Control;
       this.DistanceTraveledData.Location = new System.Drawing.Point(578, 502);
       this.DistanceTraveledData.Name = "DistanceTraveledData";
-      this.DistanceTraveledData.Size = new System.Drawing.Size(50, 31);
+      this.DistanceTraveledData.Size = new System.Drawing.Size(121, 77);
       this.DistanceTraveledData.TabIndex = 11;
       this.DistanceTraveledData.Text = "0 m";
       // 
@@ -187,7 +187,7 @@ namespace Fall2020_CSC403_Project
       this.label8.ForeColor = System.Drawing.SystemColors.Control;
       this.label8.Location = new System.Drawing.Point(68, 285);
       this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(210, 31);
+      this.label8.Size = new System.Drawing.Size(518, 77);
       this.label8.TabIndex = 12;
       this.label8.Text = "Total Health Gained:";
       this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -199,7 +199,7 @@ namespace Fall2020_CSC403_Project
       this.HealthGainedData.ForeColor = System.Drawing.SystemColors.Control;
       this.HealthGainedData.Location = new System.Drawing.Point(578, 285);
       this.HealthGainedData.Name = "HealthGainedData";
-      this.HealthGainedData.Size = new System.Drawing.Size(26, 31);
+      this.HealthGainedData.Size = new System.Drawing.Size(62, 77);
       this.HealthGainedData.TabIndex = 13;
       this.HealthGainedData.Text = "0";
       // 
@@ -210,7 +210,7 @@ namespace Fall2020_CSC403_Project
       this.label10.ForeColor = System.Drawing.SystemColors.Control;
       this.label10.Location = new System.Drawing.Point(68, 408);
       this.label10.Name = "label10";
-      this.label10.Size = new System.Drawing.Size(205, 31);
+      this.label10.Size = new System.Drawing.Size(506, 77);
       this.label10.TabIndex = 14;
       this.label10.Text = "Total Levels Gained:";
       // 
@@ -221,14 +221,15 @@ namespace Fall2020_CSC403_Project
       this.LevelsGainedData.ForeColor = System.Drawing.SystemColors.Control;
       this.LevelsGainedData.Location = new System.Drawing.Point(578, 408);
       this.LevelsGainedData.Name = "LevelsGainedData";
-      this.LevelsGainedData.Size = new System.Drawing.Size(26, 31);
+      this.LevelsGainedData.Size = new System.Drawing.Size(62, 77);
       this.LevelsGainedData.TabIndex = 15;
       this.LevelsGainedData.Text = "0";
       // 
       // StatsWindow
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 61F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoSize = true;
       this.BackColor = System.Drawing.Color.Black;
       this.ClientSize = new System.Drawing.Size(698, 749);
       this.Controls.Add(this.LevelsGainedData);
