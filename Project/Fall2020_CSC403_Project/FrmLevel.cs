@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using MyGameLibrary.Models;
 using System.Collections.Generic;
+using WMPLib;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
@@ -28,10 +29,11 @@ namespace Fall2020_CSC403_Project {
 	private Medkit offScreenMedkit;
 	private int MEDKIT_VALUE;
 
+	WindowsMediaPlayer backgroundMusic = new WindowsMediaPlayer();
+
 	public FrmLevel() {
-       
-      
 	  InitializeComponent();
+		backgroundMusic.URL = "Run-Amok.mp3";
 	}
 
 	private void FrmLevel_Load(object sender, EventArgs e) {
@@ -87,8 +89,10 @@ namespace Fall2020_CSC403_Project {
 	  Game.player = player;
 	  timeBegin = DateTime.Now;
 
-	  // Show player's health bar when the game first loaded
-	  PlayerHealthBar();
+		backgroundMusic.controls.play();
+
+		// Show player's health bar when the game first loaded
+			PlayerHealthBar();
 	}
 
 	private Vector2 CreatePosition(PictureBox pic) {
@@ -206,15 +210,13 @@ namespace Fall2020_CSC403_Project {
 		}
 	}
 
-		public void set_save()
-		{
-			
-            player.Position = new Vector2(SaveModel.PlayerPosition["x"], SaveModel.PlayerPosition["y"]);
-            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+	public void set_save()
+	{
+    player.Position = new Vector2(SaveModel.PlayerPosition["x"], SaveModel.PlayerPosition["y"]);
+    picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+	}
 
-        }
-
-        private bool HitAWall(Character c) {
+  private bool HitAWall(Character c) {
 	  bool hitAWall = false;
 	  for (int w = 0; w < walls.Length; w++) {
 		if (c.Collider.Intersects(walls[w].Collider)) {
