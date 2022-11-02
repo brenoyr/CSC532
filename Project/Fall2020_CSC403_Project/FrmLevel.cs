@@ -1,4 +1,5 @@
 ﻿using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.Properties;
 using MyGameLibrary;
 using System;
 using System.Drawing;
@@ -6,6 +7,7 @@ using System.Windows.Forms;
 using MyGameLibrary.Models;
 using System.Collections.Generic;
 using WMPLib;
+using System.Media;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
@@ -29,13 +31,12 @@ namespace Fall2020_CSC403_Project {
 	private Medkit offScreenMedkit;
 	private int MEDKIT_VALUE;
 
-	WindowsMediaPlayer backgroundMusic = new WindowsMediaPlayer();
+	SoundPlayer bgMusic = new SoundPlayer(Resources.Run_Amok);
 
 	public FrmLevel() {
 	  InitializeComponent();
-		backgroundMusic.URL = "Run-Amok.mp3";
 	}
-
+		
 	private void FrmLevel_Load(object sender, EventArgs e) {
 	  const int PADDING = 7;
 	  const int NUM_WALLS = 13;
@@ -89,10 +90,12 @@ namespace Fall2020_CSC403_Project {
 	  Game.player = player;
 	  timeBegin = DateTime.Now;
 
-		backgroundMusic.controls.play();
+		//backgroundMusic.controls.play();
+		//bgMusic.SoundLocation = @".\Resources\Run-Amok.wav";
+		bgMusic.PlayLooping();
 
 		// Show player's health bar when the game first loaded
-			PlayerHealthBar();
+		PlayerHealthBar();
 	}
 
 	private Vector2 CreatePosition(PictureBox pic) {
