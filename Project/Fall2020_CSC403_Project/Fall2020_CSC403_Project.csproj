@@ -253,6 +253,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\man-dying.wav" />
+    <None Include="Resources\die.wav" />
+    <None Include="Resources\die-sound.wav" />
     <None Include="Resources\gray-wall.jpg" />
     <None Include="Resources\wall3.png" />
     <None Include="Resources\wall2.png" />

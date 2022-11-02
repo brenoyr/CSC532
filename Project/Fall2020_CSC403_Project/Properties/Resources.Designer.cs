@@ -81,6 +81,15 @@ namespace Fall2020_CSC403_Project.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream die {
+            get {
+                return ResourceManager.GetStream("die", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap enemy_cheetos {
@@ -126,6 +135,15 @@ namespace Fall2020_CSC403_Project.Properties {
             get {
                 object obj = ResourceManager.GetObject("gray-wall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream man_dying {
+            get {
+                return ResourceManager.GetStream("man_dying", resourceCulture);
             }
         }
         

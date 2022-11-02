@@ -78,6 +78,8 @@ namespace Fall2020_CSC403_Project {
         Close();
       }
       else if (enemy.Health <= 0) {
+        SoundPlayer dieSound = new SoundPlayer(Resources.man_dying);
+        dieSound.Play();
         player.AlterExperience(enemy.Type);
         instance = null;
         Close();
