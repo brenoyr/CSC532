@@ -20,11 +20,12 @@ namespace Fall2020_CSC403_Project.code {
       Collider = collider;
     }
 
-    public void Move() {
+    public void Move(bool player_moved) {
             LastPosition = Position;
             // Calculate magintude of move speed
             float magnitude = (float)Math.Sqrt(Math.Pow(MoveSpeed.x, 2) + Math.Pow(MoveSpeed.y, 2));
-            StatisticsModel.DistanceTraveled += magnitude;
+            if (player_moved)
+                StatisticsModel.DistanceTraveled += magnitude;
             
             Position = new Vector2(Position.x + MoveSpeed.x, Position.y + MoveSpeed.y);
             Collider.MovePosition((int)Position.x, (int)Position.y);

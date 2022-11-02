@@ -34,6 +34,7 @@
             this.btnStats = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoadSave = new System.Windows.Forms.Button();
+            this.btnNewSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnResume
@@ -52,7 +53,7 @@
             // btnRestart
             // 
             this.btnRestart.Font = new System.Drawing.Font("Tw Cen MT Condensed", 28F);
-            this.btnRestart.Location = new System.Drawing.Point(247, 349);
+            this.btnRestart.Location = new System.Drawing.Point(247, 391);
             this.btnRestart.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnRestart.Name = "btnRestart";
             this.btnRestart.Size = new System.Drawing.Size(220, 82);
@@ -76,7 +77,7 @@
             // btnStats
             // 
             this.btnStats.Font = new System.Drawing.Font("Tw Cen MT Condensed", 28F);
-            this.btnStats.Location = new System.Drawing.Point(247, 470);
+            this.btnStats.Location = new System.Drawing.Point(247, 485);
             this.btnStats.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnStats.Name = "btnStats";
             this.btnStats.Size = new System.Drawing.Size(220, 82);
@@ -87,13 +88,13 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Tw Cen MT Condensed", 28F);
-            this.btnSave.Location = new System.Drawing.Point(247, 125);
+            this.btnSave.Font = new System.Drawing.Font("Tw Cen MT Condensed", 23F);
+            this.btnSave.Location = new System.Drawing.Point(247, 203);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(220, 82);
             this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "SAVE";
+            this.btnSave.Text = "SAVE CURRENT PROGRESS";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -101,7 +102,7 @@
             // btnLoadSave
             // 
             this.btnLoadSave.Font = new System.Drawing.Font("Tw Cen MT Condensed", 28F);
-            this.btnLoadSave.Location = new System.Drawing.Point(247, 237);
+            this.btnLoadSave.Location = new System.Drawing.Point(247, 297);
             this.btnLoadSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnLoadSave.Name = "btnLoadSave";
             this.btnLoadSave.Size = new System.Drawing.Size(220, 82);
@@ -111,12 +112,26 @@
             this.btnLoadSave.UseVisualStyleBackColor = true;
             this.btnLoadSave.Click += new System.EventHandler(this.btnLoadSave_Click);
             // 
+            // btnNewSave
+            // 
+            this.btnNewSave.Font = new System.Drawing.Font("Tw Cen MT Condensed", 27F);
+            this.btnNewSave.Location = new System.Drawing.Point(247, 109);
+            this.btnNewSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnNewSave.Name = "btnNewSave";
+            this.btnNewSave.Size = new System.Drawing.Size(220, 82);
+            this.btnNewSave.TabIndex = 6;
+            this.btnNewSave.Text = "CREATE NEW SAVE";
+            this.btnNewSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNewSave.UseVisualStyleBackColor = true;
+            this.btnNewSave.Click += new System.EventHandler(this.btnNewSave_Click);
+            // 
             // FrmPause
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(698, 749);
+            this.Controls.Add(this.btnNewSave);
             this.Controls.Add(this.btnLoadSave);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnStats);
@@ -141,5 +156,6 @@
         private System.Windows.Forms.Button btnStats;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoadSave;
+        private System.Windows.Forms.Button btnNewSave;
     }
 }
