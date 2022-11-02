@@ -12,6 +12,7 @@ namespace MyGameLibrary.Models
     public class SaveModel
     {
         public static string SaveName { get; set; }
+        public static DateTime SaveDate { get; set; }
         public static Dictionary<string, float> PlayerPosition { get; set; }
 
     }
@@ -23,6 +24,7 @@ namespace MyGameLibrary.Models
         public string Id { get; set; }
 
         public string SaveName { get; set; }
+        public DateTime SaveDate { get; set; }
         public Dictionary<string, float> PlayerPosition { get; set; }
 
     }

@@ -128,7 +128,7 @@ namespace Fall2020_CSC403_Project {
 		else
 		{
 			// move player
-			player.Move();
+			player.Move(true);
 
 			Dictionary<string, float> playerPos = new Dictionary<string, float>();
 			playerPos.Add("x", player.Position.x);
@@ -361,7 +361,7 @@ namespace Fall2020_CSC403_Project {
 			if (enemy.MovingDirection == "left")
 			{
 				enemy.Moving("left", speed);
-				enemy.Move();
+				enemy.Move(false);
 				pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
 
 				if (HitAWall(enemy))
@@ -373,7 +373,7 @@ namespace Fall2020_CSC403_Project {
 			else
 			{
 				enemy.Moving("right", speed);
-				enemy.Move();
+				enemy.Move(false);
 				pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
 
 				if (HitAWall(enemy))
@@ -389,7 +389,7 @@ namespace Fall2020_CSC403_Project {
 			if (enemy.MovingDirection == "up")
 			{
 				enemy.Moving("up", speed);
-				enemy.Move();
+				enemy.Move(false);
 				pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
 
 				if (HitAWall(enemy))
@@ -401,7 +401,7 @@ namespace Fall2020_CSC403_Project {
 			else
 			{
 				enemy.Moving("down", speed);
-				enemy.Move();
+				enemy.Move(false);
 				pic.Location = new Point((int)enemy.Position.x, (int)enemy.Position.y);
 
 				if (HitAWall(enemy))

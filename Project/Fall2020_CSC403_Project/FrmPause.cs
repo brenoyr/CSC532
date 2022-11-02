@@ -11,6 +11,7 @@ using Fall2020_CSC403_Project.code;
 using MyGameLibrary;
 using MyGameLibrary.Models;
 
+
 namespace Fall2020_CSC403_Project
 {
   public partial class FrmPause : Form
@@ -56,37 +57,68 @@ namespace Fall2020_CSC403_Project
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // TODO: Form for save name
-            // Get current date and time and use it as the save name
-            string saveName = DateTime.Now.ToString("MM-dd-yyyy HH-mm-ss");
-            SaveModel.SaveName = saveName;
 
+            // if there is no current save, create a new one
+            
+            if (SaveModel.SaveName == null)
+            {
+                MessageBox.Show("No save currently loaded. Please load a save or create a new one");
+                this.btnNewSave_Click(sender, e);
+            }
+            DatabaseHandler.update_game_save();
+            DatabaseHandler.insert_statistics();
+            MessageBox.Show("Game saved successfully");
 
-            DatabaseHandler.insert_game_save();
-
-            Console.WriteLine("Game saved as " + saveName);
 
         }
 
         private void btnLoadSave_Click(object sender, EventArgs e)
         {
 
-            StatisticsDatabaseModel stats = DatabaseHandler.get_statistics_by_id(DatabaseHandler.get_latest_game_save().Id);
+            // Display all saves in database
+            List<String> saves = DatabaseHandler.get_all_saves();
+            if (saves.Count == 0)
+            {
+                MessageBox.Show("No saves found");
+                return;
+            }
+            // Display save names in a form
+            FrmSaves frmSaves = new FrmSaves(saves);
+            frmSaves.Show();
+            // Make frmSaves show up on top of this form
+            frmSaves.TopMost = true;
 
-            StatisticsModel.TotalLevelsGained = stats.TotalLevelsGained;
-            StatisticsModel.TotalHealthGained = stats.TotalHealthGained;
-            StatisticsModel.TotalExperienceGained = stats.TotalExperienceGained;
-            StatisticsModel.TotalStrengthGained = stats.TotalStrengthGained;
-            StatisticsModel.DamageDone = stats.DamageDone;
-            StatisticsModel.DamageTaken = stats.DamageTaken;
-            StatisticsModel.DistanceTraveled = stats.DistanceTraveled;
-
-            // Insert
-
-            FrmLevel mainForm = Application.OpenForms.OfType<FrmLevel>().FirstOrDefault();
             this.Close();
-            mainForm.set_save();
-            DatabaseHandler.insert_statistics();
+
+
+
+
+        }
+
+        private void btnNewSave_Click(object sender, EventArgs e)
+        {
+
+            InputBoxValidation validation = delegate (string val) {
+                if (val == null || val == "")
+                {
+                    return "Please enter a name for your save";
+                }
+                if (DatabaseHandler.save_exists(val))
+                {
+                    return "A save with that name already exists";
+                }
+                return "";
+            };
+
+            string SaveName = "";
+            if (InputBox.Show("Save Name", "Enter a name for your save:", ref SaveName, validation) == DialogResult.OK)
+            {
+                // Save game
+                SaveModel.SaveName = SaveName;
+                SaveModel.SaveDate = DateTime.Now;
+                DatabaseHandler.insert_game_save();
+                MessageBox.Show("Game saved successfully!");
+            }
 
         }
     }
