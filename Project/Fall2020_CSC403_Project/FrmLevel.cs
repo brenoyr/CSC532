@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using MyGameLibrary.Models;
 using System.Collections.Generic;
-using WMPLib;
 using System.Media;
 
 namespace Fall2020_CSC403_Project {
@@ -90,8 +89,7 @@ namespace Fall2020_CSC403_Project {
 	  Game.player = player;
 	  timeBegin = DateTime.Now;
 
-		//backgroundMusic.controls.play();
-		//bgMusic.SoundLocation = @".\Resources\Run-Amok.wav";
+
 		bgMusic.PlayLooping();
 
 		// Show player's health bar when the game first loaded
@@ -266,9 +264,9 @@ namespace Fall2020_CSC403_Project {
 	  frmBattle.Show();
 			Console.WriteLine(enemy);
 
-      if (enemy == bossKoolaid) {
+   if (enemy == bossKoolaid) {
 		frmBattle.SetupForBossBattle();
-	  }
+	 }
 	}
 
 	// now this function also controls what is shown in the player picturebox (animation)
