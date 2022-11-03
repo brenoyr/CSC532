@@ -33,6 +33,8 @@ namespace Fall2020_CSC403_Project {
       this.lblPlayerHealthFull = new System.Windows.Forms.Label();
       this.lblPlayerHealthFullBlack = new System.Windows.Forms.Label();
       this.HPlabel = new System.Windows.Forms.Label();
+      this.backgroundMusicPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+      this.MuteBtn = new System.Windows.Forms.Button();
       this.picEnemyPoisonPacket = new System.Windows.Forms.PictureBox();
       this.picEnemyCheeto = new System.Windows.Forms.PictureBox();
       this.medkit1 = new System.Windows.Forms.PictureBox();
@@ -54,6 +56,7 @@ namespace Fall2020_CSC403_Project {
       this.picWall3 = new System.Windows.Forms.PictureBox();
       this.picBossKoolAid = new System.Windows.Forms.PictureBox();
       this.picPlayer = new System.Windows.Forms.PictureBox();
+      ((System.ComponentModel.ISupportInitialize)(this.backgroundMusicPlayer)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.medkit1)).BeginInit();
@@ -134,6 +137,27 @@ namespace Fall2020_CSC403_Project {
       this.HPlabel.TabIndex = 20;
       this.HPlabel.Text = "Player HP";
       this.HPlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      // 
+      // backgroundMusicPlayer
+      // 
+      this.backgroundMusicPlayer.Enabled = true;
+      this.backgroundMusicPlayer.Location = new System.Drawing.Point(165, 21);
+      this.backgroundMusicPlayer.Name = "backgroundMusicPlayer";
+      this.backgroundMusicPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("backgroundMusicPlayer.OcxState")));
+      this.backgroundMusicPlayer.Size = new System.Drawing.Size(75, 23);
+      this.backgroundMusicPlayer.TabIndex = 25;
+      // 
+      // MuteBtn
+      // 
+      this.MuteBtn.BackColor = System.Drawing.Color.Transparent;
+      this.MuteBtn.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.mute;
+      this.MuteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.MuteBtn.Location = new System.Drawing.Point(40, 93);
+      this.MuteBtn.Name = "MuteBtn";
+      this.MuteBtn.Size = new System.Drawing.Size(70, 70);
+      this.MuteBtn.TabIndex = 26;
+      this.MuteBtn.UseVisualStyleBackColor = false;
+      this.MuteBtn.Click += new System.EventHandler(this.MuteBtn_Click);
       // 
       // picEnemyPoisonPacket
       // 
@@ -374,6 +398,8 @@ namespace Fall2020_CSC403_Project {
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.ClientSize = new System.Drawing.Size(3085, 1669);
+      this.Controls.Add(this.MuteBtn);
+      this.Controls.Add(this.backgroundMusicPlayer);
       this.Controls.Add(this.picEnemyPoisonPacket);
       this.Controls.Add(this.picEnemyCheeto);
       this.Controls.Add(this.medkit1);
@@ -407,6 +433,7 @@ namespace Fall2020_CSC403_Project {
       this.Load += new System.EventHandler(this.FrmLevel_Load);
       this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
       this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
+      ((System.ComponentModel.ISupportInitialize)(this.backgroundMusicPlayer)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.medkit1)).EndInit();
@@ -462,6 +489,8 @@ namespace Fall2020_CSC403_Project {
         private System.Windows.Forms.PictureBox picOffScreenPlayer;
         private PictureBox medkit0;
         private PictureBox medkit1;
-    }
+    private AxWMPLib.AxWindowsMediaPlayer backgroundMusicPlayer;
+    private Button MuteBtn;
+  }
 }
 

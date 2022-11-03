@@ -294,6 +294,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\volume1.png" />
+    <None Include="Resources\mute1.png" />
+    <None Include="Resources\mute.png" />
+    <None Include="Resources\volume.png" />
+    <None Include="Resources\mute.ico" />
     <None Include="Resources\Run-Amok.wav" />
     <None Include="Resources\man-dying.wav" />
     <None Include="Resources\die.wav" />

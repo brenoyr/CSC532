@@ -32,11 +32,14 @@ namespace Fall2020_CSC403_Project {
 	private Medkit offScreenMedkit;
 	private int MEDKIT_VALUE;
 
-	WindowsMediaPlayer backgroundMusic = new WindowsMediaPlayer();
+	//WindowsMediaPlayer backgroundMusic = new WindowsMediaPlayer();
+	bool bgPlaying = true;
 
 	public FrmLevel() {
 	  InitializeComponent();
-		backgroundMusic.URL = "Run-Amok.wav";
+		backgroundMusicPlayer.URL = "Run-Amok.wav";
+		backgroundMusicPlayer.settings.playCount = 999; // repeat the music when it ends
+		backgroundMusicPlayer.Visible = false;
 	}
 
 	private void FrmLevel_Load(object sender, EventArgs e) {
@@ -107,7 +110,7 @@ namespace Fall2020_CSC403_Project {
 	  Game.player = player;
 	  timeBegin = DateTime.Now;
 
-		backgroundMusic.controls.play();
+		//backgroundMusic.controls.play();
 
 		// Show player's health bar when the game first loaded
 		PlayerHealthBar();
@@ -560,8 +563,23 @@ namespace Fall2020_CSC403_Project {
 		}
 	}
 
-
+    private void MuteBtn_Click(object sender, EventArgs e)
+    {
+			if (bgPlaying == false)
+      {
+				backgroundMusicPlayer.Ctlcontrols.play();
+				backgroundMusicPlayer.settings.playCount = 999;
+				bgPlaying = true;
+				MuteBtn.BackgroundImage = Resources.mute;
+			} 
+			else
+      {
+				backgroundMusicPlayer.Ctlcontrols.stop();
+				bgPlaying = false;
+				MuteBtn.BackgroundImage = Resources.volume;
+			}
     }
+  }
 
 }
 
