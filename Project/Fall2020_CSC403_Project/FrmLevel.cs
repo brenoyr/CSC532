@@ -407,6 +407,23 @@ namespace Fall2020_CSC403_Project {
 			ShowPauseMenu();
       		break;
 
+		case Keys.Space:
+			if (bgPlaying == false)
+			{
+				backgroundMusic.controls.play();
+				backgroundMusic.settings.playCount = 999;
+				bgPlaying = true;
+				picBgMusic.BackgroundImage = Resources.mute;
+				break;
+			}
+			else
+			{
+				backgroundMusic.controls.pause();
+				bgPlaying = false;
+				picBgMusic.BackgroundImage = Resources.volume;
+				break;
+			}
+
 		default:
 			player.ResetMoveSpeed();
 			break;
@@ -562,22 +579,6 @@ namespace Fall2020_CSC403_Project {
 		}
 	}
 
-    private void MuteBtn_Click(object sender, EventArgs e)
-    {
-			if (bgPlaying == false)
-      {
-				backgroundMusic.controls.play();
-				backgroundMusic.settings.playCount = 999;
-				bgPlaying = true;
-				MuteBtn.BackgroundImage = Resources.mute;
-			} 
-			else
-      {
-				backgroundMusic.controls.pause();
-				bgPlaying = false;
-				MuteBtn.BackgroundImage = Resources.volume;
-			}
-    }
   }
 
 }

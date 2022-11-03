@@ -33,7 +33,6 @@ namespace Fall2020_CSC403_Project {
       this.lblPlayerHealthFull = new System.Windows.Forms.Label();
       this.lblPlayerHealthFullBlack = new System.Windows.Forms.Label();
       this.HPlabel = new System.Windows.Forms.Label();
-      this.MuteBtn = new System.Windows.Forms.Button();
       this.picEnemyPoisonPacket = new System.Windows.Forms.PictureBox();
       this.picEnemyCheeto = new System.Windows.Forms.PictureBox();
       this.medkit1 = new System.Windows.Forms.PictureBox();
@@ -55,6 +54,8 @@ namespace Fall2020_CSC403_Project {
       this.picWall3 = new System.Windows.Forms.PictureBox();
       this.picBossKoolAid = new System.Windows.Forms.PictureBox();
       this.picPlayer = new System.Windows.Forms.PictureBox();
+      this.bgmusic = new System.Windows.Forms.Label();
+      this.picBgMusic = new System.Windows.Forms.PictureBox();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.medkit1)).BeginInit();
@@ -76,6 +77,7 @@ namespace Fall2020_CSC403_Project {
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.picBgMusic)).BeginInit();
       this.SuspendLayout();
       // 
       // lblInGameTime
@@ -135,18 +137,6 @@ namespace Fall2020_CSC403_Project {
       this.HPlabel.TabIndex = 20;
       this.HPlabel.Text = "Player HP";
       this.HPlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      // 
-      // MuteBtn
-      // 
-      this.MuteBtn.BackColor = System.Drawing.Color.Transparent;
-      this.MuteBtn.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.mute;
-      this.MuteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.MuteBtn.Location = new System.Drawing.Point(40, 93);
-      this.MuteBtn.Name = "MuteBtn";
-      this.MuteBtn.Size = new System.Drawing.Size(70, 70);
-      this.MuteBtn.TabIndex = 26;
-      this.MuteBtn.UseVisualStyleBackColor = false;
-      this.MuteBtn.Click += new System.EventHandler(this.MuteBtn_Click);
       // 
       // picEnemyPoisonPacket
       // 
@@ -379,6 +369,29 @@ namespace Fall2020_CSC403_Project {
       this.picPlayer.TabIndex = 0;
       this.picPlayer.TabStop = false;
       // 
+      // bgmusic
+      // 
+      this.bgmusic.BackColor = System.Drawing.Color.Black;
+      this.bgmusic.Font = new System.Drawing.Font("MV Boli", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.bgmusic.ForeColor = System.Drawing.Color.White;
+      this.bgmusic.Location = new System.Drawing.Point(3, 255);
+      this.bgmusic.Name = "bgmusic";
+      this.bgmusic.Size = new System.Drawing.Size(212, 138);
+      this.bgmusic.TabIndex = 26;
+      this.bgmusic.Text = "Space Button";
+      this.bgmusic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+      // 
+      // picBgMusic
+      // 
+      this.picBgMusic.BackColor = System.Drawing.SystemColors.ControlLight;
+      this.picBgMusic.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.mute;
+      this.picBgMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.picBgMusic.Location = new System.Drawing.Point(80, 176);
+      this.picBgMusic.Name = "picBgMusic";
+      this.picBgMusic.Size = new System.Drawing.Size(74, 65);
+      this.picBgMusic.TabIndex = 27;
+      this.picBgMusic.TabStop = false;
+      // 
       // FrmLevel
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -387,7 +400,8 @@ namespace Fall2020_CSC403_Project {
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.ClientSize = new System.Drawing.Size(3085, 1669);
-      this.Controls.Add(this.MuteBtn);
+      this.Controls.Add(this.picBgMusic);
+      this.Controls.Add(this.bgmusic);
       this.Controls.Add(this.picEnemyPoisonPacket);
       this.Controls.Add(this.picEnemyCheeto);
       this.Controls.Add(this.medkit1);
@@ -442,6 +456,7 @@ namespace Fall2020_CSC403_Project {
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.picBgMusic)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -476,7 +491,8 @@ namespace Fall2020_CSC403_Project {
         private System.Windows.Forms.PictureBox picOffScreenPlayer;
         private PictureBox medkit0;
         private PictureBox medkit1;
-    private Button MuteBtn;
+    private Label bgmusic;
+    private PictureBox picBgMusic;
   }
 }
 
