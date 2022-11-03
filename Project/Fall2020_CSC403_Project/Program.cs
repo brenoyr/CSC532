@@ -15,7 +15,7 @@ namespace Fall2020_CSC403_Project {
     [STAThread]
     static void Main() {
 
-            //DatabaseHandler.cleanup();
+            // DatabaseHandler.cleanup();
             
             Application.EnableVisualStyles();
           

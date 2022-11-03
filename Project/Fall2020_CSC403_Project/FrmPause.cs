@@ -41,7 +41,6 @@ namespace Fall2020_CSC403_Project
         {
             // Disable button
             this.btnStats.Enabled = false;
-            // TODO show stats window
             StatsWindow stats = new StatsWindow();
             stats.setBtn(this.btnStats);
             stats.Show();
@@ -86,7 +85,7 @@ namespace Fall2020_CSC403_Project
             FrmSaves frmSaves = new FrmSaves(saves);
             frmSaves.Show();
             // Make frmSaves show up on top of this form
-            frmSaves.TopMost = true;
+            frmSaves.TopMost = false;
 
             this.Close();
 

@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using MyGameLibrary.Models;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
@@ -41,16 +42,19 @@ namespace Fall2020_CSC403_Project {
 	  MEDKIT_VALUE = 5;
 
 	  player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-	  bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
-	  enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
-	  enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
+	  bossKoolaid = new Enemy("KoolAid", CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
+	  SaveModel.KoolAidAlive = true;
+	  enemyPoisonPacket = new Enemy("PoisonPacket", CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
+	  SaveModel.PoisonPacketAlive = true;
+	  enemyCheeto = new Enemy("Cheeto", CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
+	  SaveModel.CheetoAlive = true;
 
 		// set the initial moving for enemy
 		enemyCheeto.MovingDirection = "left";
 		enemyPoisonPacket.MovingDirection = "up";
 
 		// create instance of for dead enemy and player
-		offScreenEnemy = new Enemy(CreatePosition(picOffScreenEnemy), CreateCollider(picOffScreenEnemy, 0));
+		offScreenEnemy = new Enemy("", CreatePosition(picOffScreenEnemy), CreateCollider(picOffScreenEnemy, 0));
 	  offScreenPlayer = new Player(CreatePosition(picOffScreenPlayer), CreateCollider(picOffScreenPlayer, 0));
 		offScreenEnemy.Die();
 		offScreenPlayer.Die();
@@ -78,11 +82,23 @@ namespace Fall2020_CSC403_Project {
 		walls[w] = new Character(CreatePosition(pic), CreateCollider(pic, PADDING));
 	  }
 
+	  var medkitPositions = new ArrayList();
 	  medkits = new Medkit[NUM_MEDKITS];
 	  for (int m = 0; m < NUM_MEDKITS; m++) {
 		PictureBox pic = Controls.Find("medkit" + m.ToString(), true)[0] as PictureBox;
 		medkits[m] = new Medkit(CreatePosition(pic), CreateCollider(pic, PADDING), MEDKIT_VALUE);
+		SaveModel.Medkit1Alive = true;
+		SaveModel.Medkit2Alive = true;
+		Dictionary<string, float> medkitPos = new Dictionary<string, float>();
+		medkitPos.Add("x", medkits[m].Position.x);
+		medkitPos.Add("y", medkits[m].Position.y);
+		medkitPositions.Add(medkitPos);
+
 	  }
+
+	  SaveModel.Medkit1Position = (Dictionary<string, float>)medkitPositions[0];
+	  SaveModel.Medkit2Position = (Dictionary<string, float>)medkitPositions[1];
+
 
 	  Game.player = player;
 	  timeBegin = DateTime.Now;
@@ -114,7 +130,9 @@ namespace Fall2020_CSC403_Project {
 	private void tmrUpdateInGameTime_Tick(object sender, EventArgs e) {
 	  span = DateTime.Now - timeBegin;
 	  string time = span.ToString(@"hh\:mm\:ss");
-	  lblInGameTime.Text = "Time: " + time.ToString();
+	  SaveModel.InGameTime = time;
+	  lblInGameTime.Text = "Time: " + SaveModel.InGameTime.ToString();
+
 	}
 
     private void tmrPlayerMove_Tick(object sender, EventArgs e) {
@@ -180,16 +198,19 @@ namespace Fall2020_CSC403_Project {
         {
           picEnemyPoisonPacket.Hide();
           enemyPoisonPacket = offScreenEnemy;
+		  SaveModel.PoisonPacketAlive = false;
         }
         if (IsDead(enemyCheeto))
         {
           picEnemyCheeto.Hide();
           enemyCheeto = offScreenEnemy;
+		  SaveModel.CheetoAlive = false;
         }
         if (IsDead(bossKoolaid))
         {
           picBossKoolAid.Hide();
           bossKoolaid = offScreenEnemy;
+		  SaveModel.KoolAidAlive = false;
         }
 
         // Update player's health while he is moving
@@ -211,6 +232,65 @@ namespace Fall2020_CSC403_Project {
 			
             player.Position = new Vector2(SaveModel.PlayerPosition["x"], SaveModel.PlayerPosition["y"]);
             picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+			player.face_direction = SaveModel.PlayerFaceDirection;
+			player.move_direction = SaveModel.PlayerMoveDirection;
+			player.Health = SaveModel.PlayerHealth;
+			player.MaxHealth = SaveModel.PlayerMaxHealth;
+			player.strength = SaveModel.Strength;
+			player.experience = SaveModel.Experience;
+			player.level = SaveModel.Level;
+
+			enemyPoisonPacket.Position = new Vector2(SaveModel.PoisonPacketPosition["x"], SaveModel.PoisonPacketPosition["y"]);
+			picEnemyPoisonPacket.Location = new Point((int)enemyPoisonPacket.Position.x, (int)enemyPoisonPacket.Position.y);
+			enemyPoisonPacket.MovingDirection = SaveModel.PoisonPacketMoveDirection;		
+			if (SaveModel.PoisonPacketAlive == false)
+			{
+				picEnemyPoisonPacket.Hide();
+				enemyPoisonPacket = offScreenEnemy;
+			}
+
+			enemyCheeto.Position = new Vector2(SaveModel.CheetoPosition["x"], SaveModel.CheetoPosition["y"]);
+			picEnemyCheeto.Location = new Point((int)enemyCheeto.Position.x, (int)enemyCheeto.Position.y);
+			enemyCheeto.MovingDirection = SaveModel.CheetoMoveDirection;
+			if (SaveModel.CheetoAlive == false)
+			{
+				picEnemyCheeto.Hide();
+				enemyCheeto = offScreenEnemy;
+			}
+
+			// bossKoolaid.Position = new Vector2(SaveModel.KoolAidPosition["x"], SaveModel.KoolAidPosition["y"]);
+			// picBossKoolAid.Location = new Point((int)bossKoolaid.Position.x, (int)bossKoolaid.Position.y);
+			// bossKoolaid.MovingDirection = SaveModel.KoolAidMoveDirection;
+			if (SaveModel.KoolAidAlive == false)
+			{
+				picBossKoolAid.Hide();
+				bossKoolaid = offScreenEnemy;
+			}
+
+			// Medkits
+			medkits[0].Position = new Vector2(SaveModel.Medkit1Position["x"], SaveModel.Medkit1Position["y"]);
+			medkits[1].Position = new Vector2(SaveModel.Medkit2Position["x"], SaveModel.Medkit2Position["y"]);
+
+			if (SaveModel.Medkit1Alive == false)
+			{
+				PictureBox ppp = Controls.Find("medkit0", true)[0] as PictureBox;
+			  	ppp.Hide();
+				medkits[0].health_value = 0;
+			  	medkits[0] = offScreenMedkit;
+			}
+			if (SaveModel.Medkit2Alive == false)
+			{
+				PictureBox ppp = Controls.Find("medkit1", true)[0] as PictureBox;
+			  	ppp.Hide();
+				medkits[1].health_value = 0;
+			  	medkits[1] = offScreenMedkit;
+			}
+
+			// Update in game timer
+			
+
+
+
 
         }
 
@@ -232,15 +312,21 @@ namespace Fall2020_CSC403_Project {
 		  if (((player.Health + medkits[m].health_value) <= player.MaxHealth) && (player.Health < player.MaxHealth)) {
 			  Console.WriteLine("player is being healed");
 			  player.Health += medkits[m].health_value;
+			  SaveModel.PlayerHealth = player.Health;
 			  PictureBox ppp = Controls.Find("medkit" + m.ToString(), true)[0] as PictureBox;
 			  ppp.Hide();
+			  if(m == 0) {
+				SaveModel.Medkit1Alive = false;
+			  } else if (m == 1) {
+				SaveModel.Medkit2Alive = false;
+			  }
 			  medkits[m].health_value = 0;
 			  medkits[m] = offScreenMedkit;
 
               hitAWall = true;
 		  }
 		  else { 
-			  Console.WriteLine("player is already at full health");
+			  Console.WriteLine("You are already at full health!");
 		  }
 		  break;
 		  
@@ -318,6 +404,10 @@ namespace Fall2020_CSC403_Project {
 			player.ResetMoveSpeed();
 			break;
 	  }
+
+	  SaveModel.PlayerFaceDirection = player.face_direction;
+	  SaveModel.PlayerMoveDirection = player.move_direction;
+
     }
 
   private void ShowPauseMenu()
@@ -382,6 +472,32 @@ namespace Fall2020_CSC403_Project {
 					enemy.MoveBack();
 				}
 			}
+			
+			if (enemy.Name.Equals("KoolAid"))
+			{
+				Dictionary<string, float> enemyPos = new Dictionary<string, float>();
+				enemyPos.Add("x", enemy.Position.x);
+				enemyPos.Add("y", enemy.Position.y);
+				SaveModel.KoolAidPosition = enemyPos;
+				SaveModel.KoolAidMoveDirection = enemy.MovingDirection;
+
+			} else if (enemy.Name.Equals("Cheeto"))
+			{
+				Dictionary<string, float> enemyPos = new Dictionary<string, float>();
+				enemyPos.Add("x", enemy.Position.x);
+				enemyPos.Add("y", enemy.Position.y);
+				SaveModel.CheetoPosition = enemyPos;
+				SaveModel.CheetoMoveDirection = enemy.MovingDirection;
+
+			} else if(enemy.Name.Equals("PoisonPacket"))
+			{
+				Dictionary<string, float> enemyPos = new Dictionary<string, float>();
+				enemyPos.Add("x", enemy.Position.x);
+				enemyPos.Add("y", enemy.Position.y);
+				SaveModel.PoisonPacketPosition = enemyPos;
+				SaveModel.PoisonPacketMoveDirection = enemy.MovingDirection;
+			}
+
 		} 
 			
 		else if (moveCoordinate == "y")
@@ -410,6 +526,32 @@ namespace Fall2020_CSC403_Project {
 					enemy.MoveBack();
 				}
 			}
+
+			if (enemy.Name.Equals("KoolAid"))
+			{
+				Dictionary<string, float> enemyPos = new Dictionary<string, float>();
+				enemyPos.Add("x", enemy.Position.x);
+				enemyPos.Add("y", enemy.Position.y);
+				SaveModel.KoolAidPosition = enemyPos;
+				SaveModel.KoolAidMoveDirection = enemy.MovingDirection;
+
+			} else if (enemy.Name.Equals("Cheeto"))
+			{
+				Dictionary<string, float> enemyPos = new Dictionary<string, float>();
+				enemyPos.Add("x", enemy.Position.x);
+				enemyPos.Add("y", enemy.Position.y);
+				SaveModel.CheetoPosition = enemyPos;
+				SaveModel.CheetoMoveDirection = enemy.MovingDirection;
+
+			} else if(enemy.Name.Equals("PoisonPacket"))
+			{
+				Dictionary<string, float> enemyPos = new Dictionary<string, float>();
+				enemyPos.Add("x", enemy.Position.x);
+				enemyPos.Add("y", enemy.Position.y);
+				SaveModel.PoisonPacketPosition = enemyPos;
+				SaveModel.PoisonPacketMoveDirection = enemy.MovingDirection;
+			}
+
 		}
 	}
 

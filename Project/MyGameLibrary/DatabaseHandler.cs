@@ -91,8 +91,29 @@ namespace MyGameLibrary
             {
                 Id = id.ToString(),
                 SaveName = SaveModel.SaveName,
+                SaveDate = DateTime.Now,
                 PlayerPosition = SaveModel.PlayerPosition,
-                SaveDate = SaveModel.SaveDate
+                PoisonPacketPosition = SaveModel.PoisonPacketPosition,
+                PoisonPacketAlive = SaveModel.PoisonPacketAlive,
+                CheetoPosition = SaveModel.CheetoPosition,
+                CheetoAlive = SaveModel.CheetoAlive,
+                KoolAidPosition = SaveModel.KoolAidPosition,
+                KoolAidAlive = SaveModel.KoolAidAlive,
+                InGameTime = SaveModel.InGameTime,
+                PlayerFaceDirection = SaveModel.PlayerFaceDirection,
+                PlayerMoveDirection = SaveModel.PlayerMoveDirection,
+                PoisonPacketMoveDirection = SaveModel.PoisonPacketMoveDirection,
+                CheetoMoveDirection = SaveModel.CheetoMoveDirection,
+                KoolAidMoveDirection = SaveModel.KoolAidMoveDirection,
+                Medkit1Position = SaveModel.Medkit1Position,
+                Medkit1Alive = SaveModel.Medkit1Alive,
+                Medkit2Position = SaveModel.Medkit2Position,
+                Medkit2Alive = SaveModel.Medkit2Alive,
+                PlayerHealth = SaveModel.PlayerHealth,
+                PlayerMaxHealth = SaveModel.PlayerMaxHealth,
+                Strength = SaveModel.Strength,
+                Experience = SaveModel.Experience,
+                Level = SaveModel.Level,
             });
 
             insert_statistics();
@@ -107,7 +128,28 @@ namespace MyGameLibrary
                 Id = StatisticsModel.GameSaveId,
                 SaveName = SaveModel.SaveName,
                 SaveDate = DateTime.Now,
-                PlayerPosition = SaveModel.PlayerPosition
+                PlayerPosition = SaveModel.PlayerPosition,
+                PoisonPacketPosition = SaveModel.PoisonPacketPosition,
+                PoisonPacketAlive = SaveModel.PoisonPacketAlive,
+                CheetoPosition = SaveModel.CheetoPosition,
+                CheetoAlive = SaveModel.CheetoAlive,
+                KoolAidPosition = SaveModel.KoolAidPosition,
+                KoolAidAlive = SaveModel.KoolAidAlive,
+                InGameTime = SaveModel.InGameTime,
+                PlayerFaceDirection = SaveModel.PlayerFaceDirection,
+                PlayerMoveDirection = SaveModel.PlayerMoveDirection,
+                PoisonPacketMoveDirection = SaveModel.PoisonPacketMoveDirection,
+                CheetoMoveDirection = SaveModel.CheetoMoveDirection,
+                KoolAidMoveDirection = SaveModel.KoolAidMoveDirection,
+                Medkit1Position = SaveModel.Medkit1Position,
+                Medkit1Alive = SaveModel.Medkit1Alive,
+                Medkit2Position = SaveModel.Medkit2Position,
+                Medkit2Alive = SaveModel.Medkit2Alive,
+                PlayerHealth = SaveModel.PlayerHealth,
+                PlayerMaxHealth = SaveModel.PlayerMaxHealth,
+                Strength = SaveModel.Strength,
+                Experience = SaveModel.Experience,
+                Level = SaveModel.Level,
             });
 
             insert_statistics();
@@ -121,6 +163,29 @@ namespace MyGameLibrary
 
             SaveModel.SaveName = save.SaveName;
             SaveModel.PlayerPosition = save.PlayerPosition;
+            SaveModel.SaveDate = save.SaveDate;
+            SaveModel.PlayerPosition = save.PlayerPosition;
+            SaveModel.PoisonPacketPosition = save.PoisonPacketPosition;
+            SaveModel.PoisonPacketAlive = save.PoisonPacketAlive;
+            SaveModel.CheetoPosition = save.CheetoPosition;
+            SaveModel.CheetoAlive = save.CheetoAlive;
+            SaveModel.KoolAidPosition = save.KoolAidPosition;
+            SaveModel.KoolAidAlive = save.KoolAidAlive;
+            SaveModel.InGameTime = save.InGameTime;
+            SaveModel.PlayerFaceDirection = save.PlayerFaceDirection;
+            SaveModel.PlayerMoveDirection = save.PlayerMoveDirection;
+            SaveModel.PoisonPacketMoveDirection = save.PoisonPacketMoveDirection;
+            SaveModel.CheetoMoveDirection = save.CheetoMoveDirection;
+            SaveModel.KoolAidMoveDirection = save.KoolAidMoveDirection;
+            SaveModel.Medkit1Position = save.Medkit1Position;
+            SaveModel.Medkit1Alive = save.Medkit1Alive;
+            SaveModel.Medkit2Position = save.Medkit2Position;
+            SaveModel.Medkit2Alive = save.Medkit2Alive;
+            SaveModel.PlayerHealth = save.PlayerHealth;
+            SaveModel.PlayerMaxHealth = save.PlayerMaxHealth;
+            SaveModel.Strength = save.Strength;
+            SaveModel.Experience = save.Experience;
+            SaveModel.Level = save.Level;
 
             return save;
         }
@@ -132,6 +197,29 @@ namespace MyGameLibrary
             SaveDatabaseModel save = get_game_save_collection().Find(x => x.SaveName == name).FirstOrDefault();
             SaveModel.SaveName = save.SaveName;
             SaveModel.PlayerPosition = save.PlayerPosition;
+            SaveModel.SaveDate = save.SaveDate;
+            SaveModel.PlayerPosition = save.PlayerPosition;
+            SaveModel.PoisonPacketPosition = save.PoisonPacketPosition;
+            SaveModel.PoisonPacketAlive = save.PoisonPacketAlive;
+            SaveModel.CheetoPosition = save.CheetoPosition;
+            SaveModel.CheetoAlive = save.CheetoAlive;
+            SaveModel.KoolAidPosition = save.KoolAidPosition;
+            SaveModel.KoolAidAlive = save.KoolAidAlive;
+            SaveModel.InGameTime = save.InGameTime;
+            SaveModel.PlayerFaceDirection = save.PlayerFaceDirection;
+            SaveModel.PlayerMoveDirection = save.PlayerMoveDirection;
+            SaveModel.PoisonPacketMoveDirection = save.PoisonPacketMoveDirection;
+            SaveModel.CheetoMoveDirection = save.CheetoMoveDirection;
+            SaveModel.KoolAidMoveDirection = save.KoolAidMoveDirection;
+            SaveModel.Medkit1Position = save.Medkit1Position;
+            SaveModel.Medkit1Alive = save.Medkit1Alive;
+            SaveModel.Medkit2Position = save.Medkit2Position;
+            SaveModel.Medkit2Alive = save.Medkit2Alive;
+            SaveModel.PlayerHealth = save.PlayerHealth;
+            SaveModel.PlayerMaxHealth = save.PlayerMaxHealth;
+            SaveModel.Strength = save.Strength;
+            SaveModel.Experience = save.Experience;
+            SaveModel.Level = save.Level;
 
             return save;
         }
@@ -165,13 +253,14 @@ namespace MyGameLibrary
 
             List<string> saves = get_all_saves();
             Random random = new Random();
-            foreach (string save in saves)
-            {
-                // Add random DateTime to all
-                get_game_save_collection().UpdateMany(x => x.SaveName == save, Builders<SaveDatabaseModel>.Update.Set("SaveDate", DateTime.Now.AddDays(random.Next(-30, -1))));
+            // foreach (string save in saves)
+            // {
+            //     // Add random DateTime to all
+            //     get_game_save_collection().UpdateMany(x => x.SaveName == save, Builders<SaveDatabaseModel>.Update.Set("SaveDate", DateTime.Now.AddDays(random.Next(-30, -1))));
                 
-            }
-            
+            // }
+            // Delete everything from game save collection
+            get_game_save_collection().DeleteMany(_ => true);
 
             
         }
