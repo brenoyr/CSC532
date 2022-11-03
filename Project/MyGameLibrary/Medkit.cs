@@ -9,8 +9,8 @@ namespace MyGameLibrary
 {
     public class Medkit
     {
-        public Vector2 Position { get; private set; }
-        public Collider Collider { get; private set; }
+        public Vector2 Position { get; set; }
+        public Collider Collider { get; set; }
 
         public int health_value { get; set; }
 

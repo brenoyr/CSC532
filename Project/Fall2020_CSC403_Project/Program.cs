@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MongoDB.Driver;
+using MyGameLibrary;
 using MyGameLibrary.Models;
 
 namespace Fall2020_CSC403_Project {
@@ -14,8 +15,8 @@ namespace Fall2020_CSC403_Project {
     [STAThread]
     static void Main() {
 
-           
-
+            // DatabaseHandler.cleanup();
+            
             Application.EnableVisualStyles();
           
             Application.SetCompatibleTextRenderingDefault(false);
