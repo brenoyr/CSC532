@@ -1,4 +1,5 @@
 ﻿using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.Properties;
 using MyGameLibrary;
 using System;
 using System.Drawing;
@@ -6,6 +7,7 @@ using System.Windows.Forms;
 using MyGameLibrary.Models;
 using System.Collections.Generic;
 using WMPLib;
+using System.Media;
 using System.Collections;
 
 namespace Fall2020_CSC403_Project {
@@ -34,7 +36,7 @@ namespace Fall2020_CSC403_Project {
 
 	public FrmLevel() {
 	  InitializeComponent();
-		backgroundMusic.URL = "Run-Amok.mp3";
+		backgroundMusic.URL = "Run-Amok.wav";
 	}
 
 	private void FrmLevel_Load(object sender, EventArgs e) {
@@ -108,7 +110,7 @@ namespace Fall2020_CSC403_Project {
 		backgroundMusic.controls.play();
 
 		// Show player's health bar when the game first loaded
-			PlayerHealthBar();
+		PlayerHealthBar();
 	}
 
 	private Vector2 CreatePosition(PictureBox pic) {
@@ -348,10 +350,10 @@ namespace Fall2020_CSC403_Project {
 	  //player.MoveBack();
 		frmBattle = FrmBattle.GetInstance(enemy);
 	  frmBattle.Show();
-			Console.WriteLine(enemy);
+		Console.WriteLine(enemy);
 
-      if (enemy == bossKoolaid) {
-		frmBattle.SetupForBossBattle();
+    if (enemy == bossKoolaid) {
+			frmBattle.SetupForBossBattle();
 	  }
 	}
 

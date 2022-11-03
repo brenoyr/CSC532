@@ -294,6 +294,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\Run-Amok.wav" />
     <None Include="Resources\man-dying.wav" />
     <None Include="Resources\die.wav" />
     <None Include="Resources\die-sound.wav" />
