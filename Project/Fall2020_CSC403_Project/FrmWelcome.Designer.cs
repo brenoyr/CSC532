@@ -64,25 +64,28 @@ namespace Fall2020_CSC403_Project
       // 
       // startGameBtn
       // 
+      this.startGameBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       this.startGameBtn.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.startGameBtn.Location = new System.Drawing.Point(1614, 430);
       this.startGameBtn.Name = "startGameBtn";
       this.startGameBtn.Size = new System.Drawing.Size(473, 138);
       this.startGameBtn.TabIndex = 2;
       this.startGameBtn.Text = "Start Game";
-      this.startGameBtn.UseVisualStyleBackColor = true;
+      this.startGameBtn.UseVisualStyleBackColor = false;
       this.startGameBtn.Click += new System.EventHandler(this.startGameBtn_Click);
       // 
       // quitBtn
       // 
       this.quitBtn.AutoSize = true;
+      this.quitBtn.BackColor = System.Drawing.SystemColors.ScrollBar;
       this.quitBtn.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.quitBtn.Location = new System.Drawing.Point(1614, 611);
       this.quitBtn.Name = "quitBtn";
       this.quitBtn.Size = new System.Drawing.Size(473, 133);
       this.quitBtn.TabIndex = 3;
       this.quitBtn.Text = "Quit";
-      this.quitBtn.UseVisualStyleBackColor = true;
+      this.quitBtn.UseVisualStyleBackColor = false;
+      this.quitBtn.Click += new System.EventHandler(this.quitBtn_Click);
       // 
       // FrmWelcome
       // 
