@@ -190,4 +190,10 @@
   <data name="collect_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\collectSound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="welcome_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\welcome_sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="welcome_stranger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\welcome_stranger.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

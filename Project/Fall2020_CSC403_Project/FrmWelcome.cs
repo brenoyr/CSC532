@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.Properties;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Fall2020_CSC403_Project
 {
@@ -17,6 +13,9 @@ namespace Fall2020_CSC403_Project
     {
       InitializeComponent();
       welcomeLable.Parent = gifPeanut;
+
+      SoundPlayer welcomeSound = new SoundPlayer(Resources.welcome_stranger);
+      welcomeSound.Play();
     }
 
     private void startGameBtn_Click(object sender, EventArgs e)
