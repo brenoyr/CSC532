@@ -111,8 +111,9 @@ namespace Fall2020_CSC403_Project {
 
 		backgroundMusic.controls.play();
 
-		// Show player's health bar when the game first loaded
+		// Show player's health & experience bars when the game first loaded
 		PlayerHealthBar();
+		PlayerExperienceBar();
 	}
 
 	private Vector2 CreatePosition(PictureBox pic) {
@@ -221,8 +222,9 @@ namespace Fall2020_CSC403_Project {
 		  SaveModel.KoolAidAlive = false;
         }
 
-        // Update player's health while he is moving
+        // Update player's health & experience bar while he is moving
         PlayerHealthBar();
+				PlayerExperienceBar();
 
 		// call function for enemies moving infinitely
 		if (enemyPoisonPacket.Health > 0 && !HitAChar(player, enemyPoisonPacket))
@@ -453,6 +455,16 @@ namespace Fall2020_CSC403_Project {
 		lblPlayerHealthFull.Width = (int)(MAX_HEALTHBAR_WIDTH * playerHealthPer);
 
 		lblPlayerHealthFull.Text = player.Health.ToString();
+	}
+
+	public void PlayerExperienceBar()
+	{
+		float playerExperiencePer = player.experience / (float)player.MaxExperience;
+
+		const int MAX_EXPBAR_WIDTH = 226;
+		lblPlayerExperience.Width = (int)(MAX_EXPBAR_WIDTH * playerExperiencePer);
+		
+		lblPlayerExperience.Text = player.experience.ToString();
 	}
 
 	// Function to check if enemy is dead
