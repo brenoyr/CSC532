@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Fall2020_CSC403_Project;
+using System.Windows.Forms;
 
 #pragma warning disable 1591 // use this to disable comment warnings
 
@@ -83,7 +84,7 @@ namespace Fall2020_CSC403_Project.code {
 	public void LevelUp() {
 		MaxHealth += 10;
 		SaveModel.PlayerMaxHealth += 10;
-		Health = MaxHealth;
+		// Health = MaxHealth;  // Commented this out because it is currently impossible to die
 		SaveModel.PlayerHealth = MaxHealth;
 		strength += 1;
 		SaveModel.Strength += 1;
@@ -96,7 +97,7 @@ namespace Fall2020_CSC403_Project.code {
 		StatisticsModel.TotalHealthGained += 10;
 		StatisticsModel.TotalStrengthGained += 1;
 
-		
+		MessageBox.Show("Leveled Up!\n\nMax Health +10\nStrength + 1");
 
     }
 
