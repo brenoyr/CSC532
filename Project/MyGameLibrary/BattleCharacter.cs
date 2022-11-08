@@ -14,6 +14,7 @@ namespace Fall2020_CSC403_Project.code {
 		public int MaxHealth { get; set; }
 		public float strength;
 		public int experience;
+		public int MaxExperience { get; set; }
 		public int level;
 
 
@@ -25,6 +26,7 @@ namespace Fall2020_CSC403_Project.code {
 		    MaxHealth = 20;
 		    strength = 2;
 		    experience = 0;
+				MaxExperience = 100;
 		    level = 1;
 		    Health = MaxHealth;
 
