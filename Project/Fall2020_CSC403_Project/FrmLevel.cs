@@ -193,8 +193,10 @@ namespace Fall2020_CSC403_Project {
 				}
 			}
 			if (HitAMedkit(player)) 
-			{ 
-				PlayerHealthBar();
+			{
+					SoundPlayer collectSound = new SoundPlayer(Resources.collect_sound);
+					collectSound.Play();
+					PlayerHealthBar();
 			}
 
 			// update player's picture box
