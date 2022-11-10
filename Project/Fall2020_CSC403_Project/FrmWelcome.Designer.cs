@@ -67,6 +67,7 @@ namespace Fall2020_CSC403_Project
       this.startGameBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       this.startGameBtn.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.startGameBtn.Location = new System.Drawing.Point(1614, 430);
+      this.startGameBtn.Margin = new System.Windows.Forms.Padding(100, 3, 300, 500);
       this.startGameBtn.Name = "startGameBtn";
       this.startGameBtn.Size = new System.Drawing.Size(473, 138);
       this.startGameBtn.TabIndex = 2;
