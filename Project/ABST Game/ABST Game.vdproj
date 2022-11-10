@@ -309,12 +309,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_45E3C72E752F450692EC3E62E2943D96"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_480F0C94FC0C61439817E9E959D5B2C6"
         "OwnerKey" = "8:_A7CEDFD6B7B19229FB47A2A81F4F98A1"
         "MsmSig" = "8:_UNDEFINED"
@@ -987,6 +981,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DA71DAB51BC346CD893BC3A4409EFA41"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DBD5BF8BDA615E4BAF2E88933A464EBD"
         "OwnerKey" = "8:_A7CEDFD6B7B19229FB47A2A81F4F98A1"
         "MsmSig" = "8:_UNDEFINED"
@@ -1145,12 +1145,6 @@
         {
         "MsmKey" = "8:_FF2A9D4AA1E7C82E127B3ECEE0AC2B9D"
         "OwnerKey" = "8:_E25EA06BF1BE4D80ABF178B34DDE7CCD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_69124EDA139FEFB45F5076D9FA480908"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1987,6 +1981,12 @@
         "OwnerKey" = "8:_1911241F78E935666B071B8FF32843E6"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_69124EDA139FEFB45F5076D9FA480908"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -2005,6 +2005,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -2021,6 +2037,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -3184,26 +3208,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_45E3C72E752F450692EC3E62E2943D96"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\..\\Desktop\\CSC532\\ABST.ico"
-            "TargetName" = "8:ABST.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_9CCCFE9554C44892BA2EDFC207534E70"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_480F0C94FC0C61439817E9E959D5B2C6"
@@ -5810,6 +5814,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DA71DAB51BC346CD893BC3A4409EFA41"
+            {
+            "SourcePath" = "8:ABST.ico"
+            "TargetName" = "8:ABST.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_9CCCFE9554C44892BA2EDFC207534E70"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DBD5BF8BDA615E4BAF2E88933A464EBD"
             {
             "AssemblyRegister" = "3:1"
@@ -6518,7 +6542,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ABST Game"
         "ProductCode" = "8:{04BFFC69-EE98-46DE-853C-FE70A34B1096}"
-        "PackageCode" = "8:{311A10F0-E456-4503-9424-E03EB1C502B6}"
+        "PackageCode" = "8:{EBF66ED3-0CA0-4E56-987D-3D70845B08AA}"
         "UpgradeCode" = "8:{3D798991-FD50-4A08-83B3-EE6D43789BE3}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -6638,7 +6662,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_722F5BFA9D054CCE9E8AA019B0C27AAF"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6C1DCEEE9D57497C8002BC139680AA73"
             {
             "Name" = "8:ABST Game"
             "Arguments" = "8:"
@@ -6647,9 +6671,9 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_E25EA06BF1BE4D80ABF178B34DDE7CCD"
-            "Folder" = "8:_B6A07D8C23304766905DFCD9F36961D4"
+            "Folder" = "8:_9CCCFE9554C44892BA2EDFC207534E70"
             "WorkingFolder" = "8:_9CCCFE9554C44892BA2EDFC207534E70"
-            "Icon" = "8:_45E3C72E752F450692EC3E62E2943D96"
+            "Icon" = "8:_DA71DAB51BC346CD893BC3A4409EFA41"
             "Feature" = "8:"
             }
         }
