@@ -2044,6 +2044,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -6662,7 +6670,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6C1DCEEE9D57497C8002BC139680AA73"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_661454F94E04431A9D6A14121AC28CEC"
             {
             "Name" = "8:ABST Game"
             "Arguments" = "8:"
@@ -6671,7 +6679,7 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_E25EA06BF1BE4D80ABF178B34DDE7CCD"
-            "Folder" = "8:_9CCCFE9554C44892BA2EDFC207534E70"
+            "Folder" = "8:_B6A07D8C23304766905DFCD9F36961D4"
             "WorkingFolder" = "8:_9CCCFE9554C44892BA2EDFC207534E70"
             "Icon" = "8:_DA71DAB51BC346CD893BC3A4409EFA41"
             "Feature" = "8:"
