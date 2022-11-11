@@ -151,7 +151,7 @@
   <data name="still_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="man_dying" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="enemy_die" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\man-dying.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="gray-wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -168,9 +168,6 @@
   </data>
   <data name="walk_front" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\testing6.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="die" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\die.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="final_battle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\final_battle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -195,5 +192,11 @@
   </data>
   <data name="welcome_stranger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\welcome_stranger.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Fluffing_a_Duck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fluffing-a-Duck.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="player_die" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player_die.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

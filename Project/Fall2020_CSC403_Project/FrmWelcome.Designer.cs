@@ -30,24 +30,12 @@ namespace Fall2020_CSC403_Project
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmWelcome));
-      this.gifPeanut = new System.Windows.Forms.PictureBox();
       this.welcomeLable = new System.Windows.Forms.Label();
       this.startGameBtn = new System.Windows.Forms.Button();
       this.quitBtn = new System.Windows.Forms.Button();
+      this.gifPeanut = new System.Windows.Forms.PictureBox();
       ((System.ComponentModel.ISupportInitialize)(this.gifPeanut)).BeginInit();
       this.SuspendLayout();
-      // 
-      // gifPeanut
-      // 
-      this.gifPeanut.BackColor = System.Drawing.SystemColors.Control;
-      this.gifPeanut.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.gifPeanut.Image = ((System.Drawing.Image)(resources.GetObject("gifPeanut.Image")));
-      this.gifPeanut.Location = new System.Drawing.Point(0, 0);
-      this.gifPeanut.Name = "gifPeanut";
-      this.gifPeanut.Size = new System.Drawing.Size(2468, 1112);
-      this.gifPeanut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-      this.gifPeanut.TabIndex = 0;
-      this.gifPeanut.TabStop = false;
       // 
       // welcomeLable
       // 
@@ -66,8 +54,8 @@ namespace Fall2020_CSC403_Project
       // 
       this.startGameBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       this.startGameBtn.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.startGameBtn.Location = new System.Drawing.Point(1614, 430);
-      this.startGameBtn.Margin = new System.Windows.Forms.Padding(100, 3, 300, 500);
+      this.startGameBtn.Location = new System.Drawing.Point(1671, 425);
+      this.startGameBtn.Margin = new System.Windows.Forms.Padding(200, 3, 300, 600);
       this.startGameBtn.Name = "startGameBtn";
       this.startGameBtn.Size = new System.Drawing.Size(473, 138);
       this.startGameBtn.TabIndex = 2;
@@ -80,13 +68,25 @@ namespace Fall2020_CSC403_Project
       this.quitBtn.AutoSize = true;
       this.quitBtn.BackColor = System.Drawing.SystemColors.ScrollBar;
       this.quitBtn.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.quitBtn.Location = new System.Drawing.Point(1614, 611);
+      this.quitBtn.Location = new System.Drawing.Point(1671, 622);
       this.quitBtn.Name = "quitBtn";
       this.quitBtn.Size = new System.Drawing.Size(473, 133);
       this.quitBtn.TabIndex = 3;
       this.quitBtn.Text = "Quit";
       this.quitBtn.UseVisualStyleBackColor = false;
       this.quitBtn.Click += new System.EventHandler(this.quitBtn_Click);
+      // 
+      // gifPeanut
+      // 
+      this.gifPeanut.BackColor = System.Drawing.SystemColors.Control;
+      this.gifPeanut.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.gifPeanut.Image = ((System.Drawing.Image)(resources.GetObject("gifPeanut.Image")));
+      this.gifPeanut.Location = new System.Drawing.Point(0, 0);
+      this.gifPeanut.Name = "gifPeanut";
+      this.gifPeanut.Size = new System.Drawing.Size(2468, 1112);
+      this.gifPeanut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.gifPeanut.TabIndex = 0;
+      this.gifPeanut.TabStop = false;
       // 
       // FrmWelcome
       // 

@@ -76,14 +76,14 @@ namespace Fall2020_CSC403_Project {
         ShowDeathMenu(); // show game over screen
         instance = null;
         Close();
-        SoundPlayer playerDieSound = new SoundPlayer(Resources.die);
+        SoundPlayer playerDieSound = new SoundPlayer(Resources.player_die);
         playerDieSound.PlaySync();
       }
       else if (enemy.Health <= 0) {
         player.AlterExperience(enemy.Type);
         instance = null;
         Close();
-        SoundPlayer dieSound = new SoundPlayer(Resources.man_dying);
+        SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
         dieSound.PlaySync();
       }
     }

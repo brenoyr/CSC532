@@ -14,7 +14,7 @@ namespace Fall2020_CSC403_Project
       InitializeComponent();
       welcomeLable.Parent = gifPeanut;
 
-      SoundPlayer welcomeSound = new SoundPlayer(Resources.welcome_stranger);
+      SoundPlayer welcomeSound = new SoundPlayer(Resources.Fluffing_a_Duck);
       welcomeSound.Play();
     }
 
