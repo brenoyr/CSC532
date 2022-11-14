@@ -3,6 +3,7 @@ using Fall2020_CSC403_Project.Properties;
 using MyGameLibrary.Models;
 using System;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Media;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemy;
     private Player player;
     private FrmDeath frmDeath;
+    private bool isCollapsed = true;
 
     private FrmBattle() {
       InitializeComponent();
@@ -88,7 +90,12 @@ namespace Fall2020_CSC403_Project {
       }
     }
 
-    private void ShowDeathMenu()
+		private void btnSpecial_MouseHover(object sender, EventArgs e)
+		{
+
+		}
+
+		private void ShowDeathMenu()
     {
         frmDeath = new FrmDeath();
         // removes the options to minimize/resize/close the window so the user has to make a choice
@@ -121,5 +128,29 @@ namespace Fall2020_CSC403_Project {
         {
 
         }
+
+    private void btnSpecial_Click(object sender, EventArgs e)
+    {
+       if (isCollapsed)
+       {
+          panelSkills.Size = panelSkills.MaximumSize;
+          isCollapsed = false;
+       }
+       else
+       {
+          panelSkills.Size = panelSkills.MinimumSize;
+          isCollapsed = true;
+       }
     }
+
+    private void btnSpecial1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnSpecial2_Click(object sender, EventArgs e)
+    {
+
+    }
+  }
 }
