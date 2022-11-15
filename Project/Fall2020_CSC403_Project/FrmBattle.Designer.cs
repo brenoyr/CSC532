@@ -160,7 +160,7 @@
 			this.panelSkills.MaximumSize = new System.Drawing.Size(257, 134);
 			this.panelSkills.MinimumSize = new System.Drawing.Size(129, 134);
 			this.panelSkills.Name = "panelSkills";
-			this.panelSkills.Size = new System.Drawing.Size(257, 134);
+			this.panelSkills.Size = new System.Drawing.Size(129, 134);
 			this.panelSkills.TabIndex = 8;
 			// 
 			// btnSkill2
@@ -200,10 +200,10 @@
 			this.txtDescription.BackColor = System.Drawing.Color.OldLace;
 			this.txtDescription.Font = new System.Drawing.Font("MV Boli", 12F);
 			this.txtDescription.ForeColor = System.Drawing.Color.Green;
-			this.txtDescription.Location = new System.Drawing.Point(628, 381);
+			this.txtDescription.Location = new System.Drawing.Point(627, 390);
 			this.txtDescription.Multiline = true;
 			this.txtDescription.Name = "txtDescription";
-			this.txtDescription.Size = new System.Drawing.Size(134, 134);
+			this.txtDescription.Size = new System.Drawing.Size(134, 116);
 			this.txtDescription.TabIndex = 9;
 			this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.txtDescription.Visible = false;
