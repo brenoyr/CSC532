@@ -63,6 +63,16 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backgroundDark {
+            get {
+                object obj = ResourceManager.GetObject("backgroundDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap battle_screen {
             get {
                 object obj = ResourceManager.GetObject("battle_screen", resourceCulture);
@@ -320,6 +330,16 @@ namespace Fall2020_CSC403_Project.Properties {
         internal static System.Drawing.Bitmap walltree2 {
             get {
                 object obj = ResourceManager.GetObject("walltree2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap walltreeDark {
+            get {
+                object obj = ResourceManager.GetObject("walltreeDark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
