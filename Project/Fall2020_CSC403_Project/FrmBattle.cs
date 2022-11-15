@@ -14,8 +14,9 @@ namespace Fall2020_CSC403_Project {
     private Player player;
     private FrmDeath frmDeath;
     private bool isCollapsed = true;
+    private Random rnd = new Random();
 
-    private FrmBattle() {
+		private FrmBattle() {
       InitializeComponent();
       player = Game.player;
     }
@@ -67,6 +68,26 @@ namespace Fall2020_CSC403_Project {
       lblEnemyHealthFull.Text = enemy.Health.ToString();
     }
 
+    private void CheckForPlayerOrEnemyDeath()
+    {
+			if (player.Health <= 0)
+			{
+				ShowDeathMenu(); // show game over screen
+				instance = null;
+				Close();
+				SoundPlayer playerDieSound = new SoundPlayer(Resources.player_die);
+				playerDieSound.PlaySync();
+			}
+			else if (enemy.Health <= 0)
+			{
+				player.AlterExperience(enemy.Type);
+				instance = null;
+				Close();
+				SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
+				dieSound.PlaySync();
+			}
+		}
+
     private void btnAttack_Click(object sender, EventArgs e) {
       player.OnAttack(-4);
       if (enemy.Health > 0) {
@@ -74,20 +95,7 @@ namespace Fall2020_CSC403_Project {
       }
 
       UpdateHealthBars();
-      if (player.Health <= 0) {
-        ShowDeathMenu(); // show game over screen
-        instance = null;
-        Close();
-        SoundPlayer playerDieSound = new SoundPlayer(Resources.player_die);
-        playerDieSound.PlaySync();
-      }
-      else if (enemy.Health <= 0) {
-        player.AlterExperience(enemy.Type);
-        instance = null;
-        Close();
-        SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
-        dieSound.PlaySync();
-      }
+      CheckForPlayerOrEnemyDeath();
     }
 
 		private void btnSkills_Click(object sender, EventArgs e)
@@ -106,19 +114,28 @@ namespace Fall2020_CSC403_Project {
 
 		private void btnSkill1_MouseHover(object sender, EventArgs e)
 		{
-        txtDescription.Visible = true;
-        // "\n" doesn't work in TextBox tool
-        txtDescription.Text = "Chance of critical hit." + Environment.NewLine + Environment.NewLine + "Low accuracy, may miss";
+      txtDescription.Visible = true;
+      // "\n" doesn't work in TextBox tool
+      txtDescription.Text = "Chance of critical hit." + Environment.NewLine + Environment.NewLine + "Low accuracy (33%)";
 		}
 
 		private void btnSkill1_MouseLeave(object sender, EventArgs e)
 		{
-			  txtDescription.Visible = false;
+			txtDescription.Visible = false;
 		}
 
 		private void btnSkill1_Click(object sender, EventArgs e)
 		{
-
+      if (rnd.Next(1, 3) == 2)  // pseudo-random 33% chance of success
+      {
+        player.OnAttack(-7); // critical hit
+			}
+			if (enemy.Health > 0)
+			{
+				enemy.OnAttack(-2);
+		  }
+			UpdateHealthBars();
+			CheckForPlayerOrEnemyDeath();
 		}
 
 		private void btnSkill2_MouseHover(object sender, EventArgs e)
