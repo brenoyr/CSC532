@@ -107,7 +107,8 @@ namespace Fall2020_CSC403_Project {
 		private void btnSkill1_MouseHover(object sender, EventArgs e)
 		{
         txtDescription.Visible = true;
-        txtDescription.Text = "Chance of critical hit. Lower accuracy, may miss the attack";
+        // "\n" doesn't work in TextBox tool
+        txtDescription.Text = "Chance of critical hit." + Environment.NewLine + Environment.NewLine + "Low accuracy, may miss";
 		}
 
 		private void btnSkill1_MouseLeave(object sender, EventArgs e)
@@ -123,7 +124,7 @@ namespace Fall2020_CSC403_Project {
 		private void btnSkill2_MouseHover(object sender, EventArgs e)
 		{
 			txtDescription.Visible = true;
-			txtDescription.Text = "Powered-up attack. Recoil damage";
+			txtDescription.Text = "Powered-up attack." + Environment.NewLine + Environment.NewLine + "Recoil damage";
 		}
 
 		private void btnSkill2_MouseLeave(object sender, EventArgs e)
