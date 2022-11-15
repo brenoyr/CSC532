@@ -3,6 +3,7 @@ using Fall2020_CSC403_Project.Properties;
 using MyGameLibrary.Models;
 using System;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Media;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace Fall2020_CSC403_Project {
     private Enemy enemy;
     private Player player;
     private FrmDeath frmDeath;
+    private bool isCollapsed = true;
 
     private FrmBattle() {
       InitializeComponent();
@@ -88,7 +90,52 @@ namespace Fall2020_CSC403_Project {
       }
     }
 
-    private void ShowDeathMenu()
+		private void btnSkills_Click(object sender, EventArgs e)
+		{
+			if (isCollapsed)
+			{
+				panelSkills.Size = panelSkills.MaximumSize;
+				isCollapsed = false;
+			}
+			else
+			{
+				panelSkills.Size = panelSkills.MinimumSize;
+				isCollapsed = true;
+			}
+		}
+
+		private void btnSkill1_MouseHover(object sender, EventArgs e)
+		{
+        txtDescription.Visible = true;
+        txtDescription.Text = "Chance of critical hit. Lower accuracy, may miss the attack";
+		}
+
+		private void btnSkill1_MouseLeave(object sender, EventArgs e)
+		{
+			  txtDescription.Visible = false;
+		}
+
+		private void btnSkill1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnSkill2_MouseHover(object sender, EventArgs e)
+		{
+			txtDescription.Visible = true;
+			txtDescription.Text = "Powered-up attack. Recoil damage";
+		}
+
+		private void btnSkill2_MouseLeave(object sender, EventArgs e)
+		{
+			txtDescription.Visible = false;
+		}
+		private void btnSkill2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+		private void ShowDeathMenu()
     {
         frmDeath = new FrmDeath();
         // removes the options to minimize/resize/close the window so the user has to make a choice
@@ -121,5 +168,5 @@ namespace Fall2020_CSC403_Project {
         {
 
         }
-    }
+  }
 }
