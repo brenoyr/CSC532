@@ -303,6 +303,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\backgroundDark.jpg" />
+    <None Include="Resources\walltreeDark.jpg" />
+    <None Include="Resources\jungle.jpg" />
+    <None Include="Resources\walltree2.jpg" />
     <None Include="Resources\Fluffing-a-Duck.wav" />
     <None Include="Resources\player_die.wav" />
     <None Include="Resources\welcome_stranger.wav" />

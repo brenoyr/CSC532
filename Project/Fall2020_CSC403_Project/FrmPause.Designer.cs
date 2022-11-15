@@ -132,6 +132,8 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoSize = true;
       this.BackColor = System.Drawing.Color.Black;
+      this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.backgroundDark;
+      this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.ClientSize = new System.Drawing.Size(698, 749);
       this.Controls.Add(this.btnNewSave);
       this.Controls.Add(this.btnLoadSave);

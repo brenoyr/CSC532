@@ -9,12 +9,13 @@ namespace Fall2020_CSC403_Project
   public partial class FrmWelcome : Form
   {
     private FrmLevel frmLevel;
+    SoundPlayer welcomeSound = new SoundPlayer(Resources.Fluffing_a_Duck);
     public FrmWelcome()
     {
       InitializeComponent();
       welcomeLable.Parent = gifPeanut;
 
-      SoundPlayer welcomeSound = new SoundPlayer(Resources.Fluffing_a_Duck);
+      
       welcomeSound.Play();
     }
 
@@ -22,6 +23,7 @@ namespace Fall2020_CSC403_Project
     {
       frmLevel = new FrmLevel();
       frmLevel.Show();
+      welcomeSound.Stop();
       this.Hide();
     }
 
