@@ -90,10 +90,50 @@ namespace Fall2020_CSC403_Project {
       }
     }
 
-		private void btnSpecial_MouseHover(object sender, EventArgs e)
+		private void btnSkills_Click(object sender, EventArgs e)
+		{
+			if (isCollapsed)
+			{
+				panelSkills.Size = panelSkills.MaximumSize;
+				isCollapsed = false;
+			}
+			else
+			{
+				panelSkills.Size = panelSkills.MinimumSize;
+				isCollapsed = true;
+			}
+		}
+
+		private void btnSkill1_MouseHover(object sender, EventArgs e)
+		{
+        txtDescription.Visible = true;
+        txtDescription.Text = "Chance of critical hit. Lower accuracy, may miss the attack";
+		}
+
+		private void btnSkill1_MouseLeave(object sender, EventArgs e)
+		{
+			  txtDescription.Visible = false;
+		}
+
+		private void btnSkill1_Click(object sender, EventArgs e)
 		{
 
 		}
+
+		private void btnSkill2_MouseHover(object sender, EventArgs e)
+		{
+			txtDescription.Visible = true;
+			txtDescription.Text = "Powered-up attack. Recoil damage";
+		}
+
+		private void btnSkill2_MouseLeave(object sender, EventArgs e)
+		{
+			txtDescription.Visible = false;
+		}
+		private void btnSkill2_Click(object sender, EventArgs e)
+    {
+
+    }
 
 		private void ShowDeathMenu()
     {
@@ -128,29 +168,5 @@ namespace Fall2020_CSC403_Project {
         {
 
         }
-
-    private void btnSpecial_Click(object sender, EventArgs e)
-    {
-       if (isCollapsed)
-       {
-          panelSkills.Size = panelSkills.MaximumSize;
-          isCollapsed = false;
-       }
-       else
-       {
-          panelSkills.Size = panelSkills.MinimumSize;
-          isCollapsed = true;
-       }
-    }
-
-    private void btnSpecial1_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void btnSpecial2_Click(object sender, EventArgs e)
-    {
-
-    }
   }
 }

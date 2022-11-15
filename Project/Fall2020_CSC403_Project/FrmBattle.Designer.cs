@@ -33,10 +33,11 @@
 			this.picEnemy = new System.Windows.Forms.PictureBox();
 			this.picPlayer = new System.Windows.Forms.PictureBox();
 			this.tmrFinalBattle = new System.Windows.Forms.Timer(this.components);
-			this.btnSpecial = new System.Windows.Forms.Button();
+			this.btnSkills = new System.Windows.Forms.Button();
 			this.panelSkills = new System.Windows.Forms.Panel();
-			this.btnSpecial1 = new System.Windows.Forms.Button();
-			this.btnSpecial2 = new System.Windows.Forms.Button();
+			this.btnSkill2 = new System.Windows.Forms.Button();
+			this.btnSkill1 = new System.Windows.Forms.Button();
+			this.txtDescription = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.picBossBattle)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picEnemy)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
@@ -136,60 +137,76 @@
 			this.tmrFinalBattle.Interval = 5600;
 			this.tmrFinalBattle.Tick += new System.EventHandler(this.tmrFinalBattle_Tick);
 			// 
-			// btnSpecial
+			// btnSkills
 			// 
-			this.btnSpecial.BackColor = System.Drawing.Color.OldLace;
-			this.btnSpecial.Font = new System.Drawing.Font("MV Boli", 18F);
-			this.btnSpecial.ForeColor = System.Drawing.Color.Green;
-			this.btnSpecial.Location = new System.Drawing.Point(0, 47);
-			this.btnSpecial.Margin = new System.Windows.Forms.Padding(8, 8, 38, 84);
-			this.btnSpecial.Name = "btnSpecial";
-			this.btnSpecial.Size = new System.Drawing.Size(128, 43);
-			this.btnSpecial.TabIndex = 2;
-			this.btnSpecial.Text = "Special Move";
-			this.btnSpecial.UseVisualStyleBackColor = false;
-			this.btnSpecial.Click += new System.EventHandler(this.btnSpecial_Click);
-			this.btnSpecial.MouseHover += new System.EventHandler(this.btnSpecial_MouseHover);
+			this.btnSkills.BackColor = System.Drawing.Color.OldLace;
+			this.btnSkills.Font = new System.Drawing.Font("MV Boli", 18F);
+			this.btnSkills.ForeColor = System.Drawing.Color.Green;
+			this.btnSkills.Location = new System.Drawing.Point(0, 47);
+			this.btnSkills.Margin = new System.Windows.Forms.Padding(8, 8, 38, 84);
+			this.btnSkills.Name = "btnSkills";
+			this.btnSkills.Size = new System.Drawing.Size(128, 43);
+			this.btnSkills.TabIndex = 2;
+			this.btnSkills.Text = "Skills";
+			this.btnSkills.UseVisualStyleBackColor = false;
+			this.btnSkills.Click += new System.EventHandler(this.btnSkills_Click);
 			// 
 			// panelSkills
 			// 
-			this.panelSkills.Controls.Add(this.btnSpecial2);
-			this.panelSkills.Controls.Add(this.btnSpecial1);
-			this.panelSkills.Controls.Add(this.btnSpecial);
+			this.panelSkills.Controls.Add(this.btnSkill2);
+			this.panelSkills.Controls.Add(this.btnSkill1);
+			this.panelSkills.Controls.Add(this.btnSkills);
 			this.panelSkills.Location = new System.Drawing.Point(341, 381);
 			this.panelSkills.MaximumSize = new System.Drawing.Size(257, 134);
 			this.panelSkills.MinimumSize = new System.Drawing.Size(129, 134);
 			this.panelSkills.Name = "panelSkills";
-			this.panelSkills.Size = new System.Drawing.Size(129, 134);
+			this.panelSkills.Size = new System.Drawing.Size(257, 134);
 			this.panelSkills.TabIndex = 8;
 			// 
-			// btnSpecial1
+			// btnSkill2
 			// 
-			this.btnSpecial1.BackColor = System.Drawing.Color.OldLace;
-			this.btnSpecial1.Font = new System.Drawing.Font("MV Boli", 18F);
-			this.btnSpecial1.ForeColor = System.Drawing.Color.Green;
-			this.btnSpecial1.Location = new System.Drawing.Point(129, 8);
-			this.btnSpecial1.Margin = new System.Windows.Forms.Padding(8, 8, 38, 84);
-			this.btnSpecial1.Name = "btnSpecial1";
-			this.btnSpecial1.Size = new System.Drawing.Size(128, 43);
-			this.btnSpecial1.TabIndex = 3;
-			this.btnSpecial1.Text = "1";
-			this.btnSpecial1.UseVisualStyleBackColor = false;
-			this.btnSpecial1.Click += new System.EventHandler(this.btnSpecial1_Click);
+			this.btnSkill2.BackColor = System.Drawing.Color.OldLace;
+			this.btnSkill2.Font = new System.Drawing.Font("MV Boli", 18F);
+			this.btnSkill2.ForeColor = System.Drawing.Color.Green;
+			this.btnSkill2.Location = new System.Drawing.Point(129, 82);
+			this.btnSkill2.Margin = new System.Windows.Forms.Padding(8, 8, 38, 84);
+			this.btnSkill2.Name = "btnSkill2";
+			this.btnSkill2.Size = new System.Drawing.Size(128, 43);
+			this.btnSkill2.TabIndex = 4;
+			this.btnSkill2.Text = "2";
+			this.btnSkill2.UseVisualStyleBackColor = false;
+			this.btnSkill2.Click += new System.EventHandler(this.btnSkill2_Click);
+			this.btnSkill2.MouseLeave += new System.EventHandler(this.btnSkill2_MouseLeave);
+			this.btnSkill2.MouseHover += new System.EventHandler(this.btnSkill2_MouseHover);
 			// 
-			// btnSpecial2
+			// btnSkill1
 			// 
-			this.btnSpecial2.BackColor = System.Drawing.Color.OldLace;
-			this.btnSpecial2.Font = new System.Drawing.Font("MV Boli", 18F);
-			this.btnSpecial2.ForeColor = System.Drawing.Color.Green;
-			this.btnSpecial2.Location = new System.Drawing.Point(129, 82);
-			this.btnSpecial2.Margin = new System.Windows.Forms.Padding(8, 8, 38, 84);
-			this.btnSpecial2.Name = "btnSpecial2";
-			this.btnSpecial2.Size = new System.Drawing.Size(128, 43);
-			this.btnSpecial2.TabIndex = 4;
-			this.btnSpecial2.Text = "2";
-			this.btnSpecial2.UseVisualStyleBackColor = false;
-			this.btnSpecial2.Click += new System.EventHandler(this.btnSpecial2_Click);
+			this.btnSkill1.BackColor = System.Drawing.Color.OldLace;
+			this.btnSkill1.Font = new System.Drawing.Font("MV Boli", 18F);
+			this.btnSkill1.ForeColor = System.Drawing.Color.Green;
+			this.btnSkill1.Location = new System.Drawing.Point(129, 8);
+			this.btnSkill1.Margin = new System.Windows.Forms.Padding(8, 8, 38, 84);
+			this.btnSkill1.Name = "btnSkill1";
+			this.btnSkill1.Size = new System.Drawing.Size(128, 43);
+			this.btnSkill1.TabIndex = 3;
+			this.btnSkill1.Text = "1";
+			this.btnSkill1.UseVisualStyleBackColor = false;
+			this.btnSkill1.Click += new System.EventHandler(this.btnSkill1_Click);
+			this.btnSkill1.MouseLeave += new System.EventHandler(this.btnSkill1_MouseLeave);
+			this.btnSkill1.MouseHover += new System.EventHandler(this.btnSkill1_MouseHover);
+			// 
+			// txtDescription
+			// 
+			this.txtDescription.BackColor = System.Drawing.Color.OldLace;
+			this.txtDescription.Font = new System.Drawing.Font("MV Boli", 12F);
+			this.txtDescription.ForeColor = System.Drawing.Color.Green;
+			this.txtDescription.Location = new System.Drawing.Point(628, 381);
+			this.txtDescription.Multiline = true;
+			this.txtDescription.Name = "txtDescription";
+			this.txtDescription.Size = new System.Drawing.Size(134, 134);
+			this.txtDescription.TabIndex = 9;
+			this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtDescription.Visible = false;
 			// 
 			// FrmBattle
 			// 
@@ -199,6 +216,7 @@
 			this.BackColor = System.Drawing.Color.Green;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(822, 538);
+			this.Controls.Add(this.txtDescription);
 			this.Controls.Add(this.panelSkills);
 			this.Controls.Add(this.picBossBattle);
 			this.Controls.Add(this.lblEnemyHealthFull);
@@ -218,6 +236,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
 			this.panelSkills.ResumeLayout(false);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
     }
 
@@ -232,9 +251,10 @@
     private System.Windows.Forms.Label lblEnemyHealthFull;
     private System.Windows.Forms.PictureBox picBossBattle;
     private System.Windows.Forms.Timer tmrFinalBattle;
-        private System.Windows.Forms.Button btnSpecial;
+        private System.Windows.Forms.Button btnSkills;
 		private System.Windows.Forms.Panel panelSkills;
-		private System.Windows.Forms.Button btnSpecial2;
-		private System.Windows.Forms.Button btnSpecial1;
+		private System.Windows.Forms.Button btnSkill2;
+		private System.Windows.Forms.Button btnSkill1;
+		private System.Windows.Forms.TextBox txtDescription;
 	}
 }
