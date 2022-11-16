@@ -51,7 +51,8 @@ namespace Fall2020_CSC403_Project
         private void btnQuit_Click(object sender, EventArgs e)
     {
       Application.Exit();   // exit application
-      Environment.Exit(0);  // terminates without event handlers intervening
+      // line below currently crashes game as of 11/15/22
+      // Environment.Exit(0);  // terminates without event handlers intervening
     }
 
         private void btnSave_Click(object sender, EventArgs e)
