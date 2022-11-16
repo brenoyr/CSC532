@@ -35,15 +35,32 @@ namespace Fall2020_CSC403_Project {
       UpdateHealthBars();
     }
 
-    public void SetupForBossBattle() {
-      picBossBattle.Location = Point.Empty;
-      picBossBattle.Size = ClientSize;
-      picBossBattle.Visible = true;
+    public void SetupForBossBattle(int bossLevel) {
 
-      SoundPlayer simpleSound = new SoundPlayer(Resources.final_battle);
-      simpleSound.Play();
+        if (bossLevel == 1)
+        {
+            picBossBattle.Location = Point.Empty;
+            picBossBattle.Size = ClientSize;
+            picBossBattle.Visible = true;
 
-      tmrFinalBattle.Enabled = true;
+            SoundPlayer simpleSound = new SoundPlayer(Resources.final_battle);
+            simpleSound.Play();
+
+            tmrFinalBattle.Enabled = true;
+        }
+
+        if (bossLevel == 2)
+        {
+            picBossBattle.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.battle_screen_solomon;
+                picBossBattle.Location = Point.Empty;
+            picBossBattle.Size = ClientSize;
+            picBossBattle.Visible = true;
+
+            SoundPlayer simpleSound = new SoundPlayer(Resources.final_battle_2);
+            simpleSound.Play();
+
+            tmrFinalBattle.Enabled = true;
+        }
     }
 
     public static FrmBattle GetInstance(Enemy enemy) {

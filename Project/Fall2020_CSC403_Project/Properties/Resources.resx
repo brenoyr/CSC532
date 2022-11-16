@@ -211,4 +211,22 @@
   <data name="backgroundDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroundDark.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="stone_floor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stone_floor.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bullet_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bullet-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bullet_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bullet-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemy_solomon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemy_solomon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battle_screen_solomon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battle_screen_solomon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="final_battle_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\final_battle_2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
