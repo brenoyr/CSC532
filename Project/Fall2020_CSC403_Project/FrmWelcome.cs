@@ -4,6 +4,7 @@ using Fall2020_CSC403_Project.Properties;
 using System.Windows.Forms;
 using System.Media;
 
+
 namespace Fall2020_CSC403_Project
 {
   public partial class FrmWelcome : Form
@@ -31,5 +32,14 @@ namespace Fall2020_CSC403_Project
     {
       Application.Exit();
     }
-  }
+
+        private void PvPInit_Click(object sender, EventArgs e)
+        {
+            Connect connect = new Connect();
+            connect.Show();
+            this.Hide();
+        }
+
+
+    }
 }
