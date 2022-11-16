@@ -65,6 +65,22 @@ namespace Fall2020_CSC403_Project {
             if(this.player.Health > 0)
                 unfreeze_screen();
 
+            if (player.Health <= 0 || player2.Health <= 0)
+            {
+                instance = null;
+                Close();
+                SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
+                dieSound.PlaySync();
+                if (player.Health <= 0)
+                {
+                    MessageBox.Show("You lost!");
+                }
+                else if (player2.Health <= 0)
+                {
+                    MessageBox.Show("You won!");
+                }
+            }
+
 
         }
 
@@ -139,6 +155,7 @@ namespace Fall2020_CSC403_Project {
                 // }
             }
 
+            /*
              if (player.Health <= 0 || player2.Health <= 0)
                 {
                     instance = null;
@@ -153,6 +170,7 @@ namespace Fall2020_CSC403_Project {
                         MessageBox.Show("You won!");
                     }
                 }
+            */
             sock.Send(System.Text.Encoding.ASCII.GetBytes("a" + temp.ToString()));
             MessageReceiver.RunWorkerAsync();
             // UpdateHealthBars();
@@ -269,7 +287,7 @@ namespace Fall2020_CSC403_Project {
                         // }
                     
                 }
-
+                /*
                 if (player.Health <= 0 || player2.Health <= 0)
                 {
                     instance = null;
@@ -284,6 +302,7 @@ namespace Fall2020_CSC403_Project {
                         MessageBox.Show("You won!");
                     }
                 }
+                */
                
             }
 
