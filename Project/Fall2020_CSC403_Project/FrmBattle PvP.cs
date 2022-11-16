@@ -41,6 +41,7 @@ namespace Fall2020_CSC403_Project {
                 Console.WriteLine("Host");
                 
                 sock = listener.AcceptSocket();
+                //MessageReceiver.RunWorkerAsync();
 
             }
             else
@@ -50,6 +51,7 @@ namespace Fall2020_CSC403_Project {
                 client = new TcpClient(ip, 5732);
                 sock = client.Client;
                 MessageReceiver.RunWorkerAsync();
+                freeze_screen();
 
             }
             this.Setup();
@@ -57,13 +59,16 @@ namespace Fall2020_CSC403_Project {
 
     private void MessageReceiver_DoWork(object sender, DoWorkEventArgs e)
     {
-            freeze_screen();
+
             ReceiveAttack();
-            unfreeze_screen();
             
+            if(this.player.Health > 0)
+                unfreeze_screen();
+
+
         }
 
-    public void Setup() {
+        public void Setup() {
       // update for this enemy
 
       // Observer pattern
@@ -104,24 +109,68 @@ namespace Fall2020_CSC403_Project {
             // if (player2.Health > 0) {
             //   player2.OnAttack(-2); //-2
             // }
-            sock.Send(System.Text.Encoding.ASCII.GetBytes("attack"));
+            freeze_screen();
 
-      // UpdateHealthBars();
-      // if (player.Health <= 0) {
-      //   ShowDeathMenu(); // show game over screen
-      //   instance = null;
-      //   Close();
-      //   SoundPlayer playerDieSound = new SoundPlayer(Resources.player_die);
-      //   playerDieSound.PlaySync();
-      // }
-      // else if (player2.Health <= 0) {
-      //   // player.AlterExperience(player2.Type);
-      //   instance = null;
-      //   Close();
-      //   SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
-      //   dieSound.PlaySync();
-      // }
-    }
+            Random rand = new Random();
+            var temp = rand.Next(1, 6);
+            if (isHost)
+            {
+                player2.OnAttack(-temp);
+                UpdateHealthBars();
+                // if (player2.Health <= 0)
+                // {
+                //     instance = null;
+                //     Close();
+                //     SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
+                //     dieSound.PlaySync();
+                // }
+
+            }
+            else
+            {
+                player.OnAttack(-temp);
+                UpdateHealthBars();
+                // if (player.Health <= 0)
+                // {
+                //     instance = null;
+                //     Close();
+                //     SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
+                //     dieSound.PlaySync();
+                // }
+            }
+
+             if (player.Health <= 0 || player2.Health <= 0)
+                {
+                    instance = null;
+                    Close();
+                    SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
+                    dieSound.PlaySync();
+                    if (player.Health <= 0)
+                    {
+                        MessageBox.Show("You lost!");
+                    } else if(player2.Health <= 0)
+                    {
+                        MessageBox.Show("You won!");
+                    }
+                }
+            sock.Send(System.Text.Encoding.ASCII.GetBytes("a" + temp.ToString()));
+            MessageReceiver.RunWorkerAsync();
+            // UpdateHealthBars();
+            // if (player.Health <= 0) {
+            //   ShowDeathMenu(); // show game over screen
+            //   instance = null;
+            //   Close();
+            //   SoundPlayer playerDieSound = new SoundPlayer(Resources.player_die);
+            //   playerDieSound.PlaySync();
+            // }
+            // else if (player2.Health <= 0) {
+            //   // player.AlterExperience(player2.Type);
+            //   instance = null;
+            //   Close();
+            //   SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
+            //   dieSound.PlaySync();
+            // }
+        }
 
     private void ShowDeathMenu()
     {
@@ -156,10 +205,10 @@ namespace Fall2020_CSC403_Project {
         {
             
                 btnAttack.Enabled = false;
-                btnAttack.Visible = false;
                 btnAttack.Text = "Waiting for other player...";
-                btnAttack.Refresh();
-            
+            btnAttack.ForeColor = Color.Red;
+            btnAttack.Refresh();
+
         }
         private void unfreeze_screen()
         {
@@ -167,7 +216,9 @@ namespace Fall2020_CSC403_Project {
 
                 btnAttack.Enabled = true;
                 btnAttack.Visible = true;
-                btnAttack.Text = "Attack";
+            btnAttack.ForeColor = Color.Red;
+            
+            btnAttack.Text = "Attack";
                 btnAttack.Refresh();
 
             
@@ -181,30 +232,62 @@ namespace Fall2020_CSC403_Project {
 
         private void ReceiveAttack()
         {
-            byte[] buffer = new byte[6];
+            byte[] buffer = new byte[2];
             sock.Receive(buffer);
-            // Get rid of extra chars in buffer
             
             string message = System.Text.Encoding.ASCII.GetString(buffer);
-            
+            Console.WriteLine("Hereab");
             Console.WriteLine(message)
                 ;
             Random rand = new Random();
-            if (message == "attack")
+            if (buffer[0] == 'a')
             {
-                Console.WriteLine("Hereab");
-                int damage = rand.Next(1, 6);
-                player2.OnAttack(-damage);
-                UpdateHealthBars();
-                if (player2.Health <= 0)
+                if(isHost){
+                    var damage = int.Parse(message.Substring(1));
+                    player.OnAttack(-damage);
+                    UpdateHealthBars();
+                    // if (player2.Health <= 0)
+                    // {
+                    //     instance = null; 
+                    //     Close();
+                    //     SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
+                    //     dieSound.PlaySync();
+                    // }
+                }
+                else
+                {
+                    
+                        var damage = int.Parse(message.Substring(1));
+                        player2.OnAttack(-damage);
+                        UpdateHealthBars();
+                        // if (player.Health <= 0)
+                        // {
+                        //     instance = null;
+                        //     Close();
+                        //     SoundPlayer playerDieSound = new SoundPlayer(Resources.player_die);
+                        //     playerDieSound.PlaySync();
+                        // }
+                    
+                }
+
+                if (player.Health <= 0 || player2.Health <= 0)
                 {
                     instance = null;
                     Close();
                     SoundPlayer dieSound = new SoundPlayer(Resources.enemy_die);
                     dieSound.PlaySync();
+                    if (player.Health <= 0)
+                    {
+                        MessageBox.Show("You lost!");
+                    } else if(player2.Health <= 0)
+                    {
+                        MessageBox.Show("You won!");
+                    }
                 }
+               
             }
 
+            
         }
 
     }
