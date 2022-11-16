@@ -177,18 +177,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Connect.Designer.cs">
-      <DependentUpon>Connect.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmBattle PvP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBattle PvP.Designer.cs">
-      <DependentUpon>FrmBattle PvP.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmSaves.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,9 +222,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmBattle PvP.resx">
-      <DependentUpon>FrmBattle PvP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmSaves.resx">
       <DependentUpon>FrmSaves.cs</DependentUpon>
     </EmbeddedResource>
