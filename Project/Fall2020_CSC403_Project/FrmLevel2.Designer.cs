@@ -80,7 +80,7 @@
             // 
             this.picPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPlayer.Image = global::Fall2020_CSC403_Project.Properties.Resources.still_front;
-            this.picPlayer.Location = new System.Drawing.Point(101, 111);
+            this.picPlayer.Location = new System.Drawing.Point(325, 111);
             this.picPlayer.Name = "picPlayer";
             this.picPlayer.Size = new System.Drawing.Size(84, 104);
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -141,9 +141,9 @@
             // picWall4
             // 
             this.picWall4.Image = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
-            this.picWall4.Location = new System.Drawing.Point(81, 224);
+            this.picWall4.Location = new System.Drawing.Point(260, 224);
             this.picWall4.Name = "picWall4";
-            this.picWall4.Size = new System.Drawing.Size(548, 38);
+            this.picWall4.Size = new System.Drawing.Size(369, 38);
             this.picWall4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picWall4.TabIndex = 5;
             this.picWall4.TabStop = false;
@@ -181,9 +181,9 @@
             // picWall8
             // 
             this.picWall8.Image = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
-            this.picWall8.Location = new System.Drawing.Point(260, 257);
+            this.picWall8.Location = new System.Drawing.Point(260, 93);
             this.picWall8.Name = "picWall8";
-            this.picWall8.Size = new System.Drawing.Size(27, 215);
+            this.picWall8.Size = new System.Drawing.Size(27, 379);
             this.picWall8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picWall8.TabIndex = 9;
             this.picWall8.TabStop = false;
@@ -316,7 +316,7 @@
             // 
             this.picBossSolomon.BackColor = System.Drawing.Color.Transparent;
             this.picBossSolomon.Image = global::Fall2020_CSC403_Project.Properties.Resources.enemy_solomon;
-            this.picBossSolomon.Location = new System.Drawing.Point(91, 268);
+            this.picBossSolomon.Location = new System.Drawing.Point(91, 93);
             this.picBossSolomon.Name = "picBossSolomon";
             this.picBossSolomon.Size = new System.Drawing.Size(163, 186);
             this.picBossSolomon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

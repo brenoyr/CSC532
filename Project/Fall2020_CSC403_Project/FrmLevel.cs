@@ -257,10 +257,7 @@ namespace Fall2020_CSC403_Project {
 		player.Health = SaveModel.PlayerHealth;
 		player.MaxHealth = SaveModel.PlayerMaxHealth;
 		player.strength = SaveModel.Strength;
-		player.
-				
-				
-				ience = SaveModel.Experience;
+		player.experience = SaveModel.Experience;
 		player.level = SaveModel.Level;
 
 		enemyPoisonPacket.Position = new Vector2(SaveModel.PoisonPacketPosition["x"], SaveModel.PoisonPacketPosition["y"]);
