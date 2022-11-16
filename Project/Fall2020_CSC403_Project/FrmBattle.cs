@@ -128,7 +128,7 @@ namespace Fall2020_CSC403_Project {
 		{
       if (rnd.Next(1, 3) == 2)  // pseudo-random 33% chance of success
       {
-        player.OnAttack(-7); // critical hit
+        player.OnAttack(-8); // critical hit
 			}
 			if (enemy.Health > 0)
 			{
@@ -150,8 +150,15 @@ namespace Fall2020_CSC403_Project {
 		}
 		private void btnSkill2_Click(object sender, EventArgs e)
     {
-
-    }
+      player.OnAttack(-6);  // heavy hit
+      enemy.OnAttack(-1);   // recoil damage
+      if (enemy.Health > 0)
+      {
+        enemy.OnAttack(-2);
+      }
+			UpdateHealthBars();
+			CheckForPlayerOrEnemyDeath();
+		}
 
 		private void ShowDeathMenu()
     {
