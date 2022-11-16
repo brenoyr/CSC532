@@ -57,7 +57,8 @@ namespace Fall2020_CSC403_Project
             this.quitBtn.AutoSize = true;
             this.quitBtn.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.quitBtn.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quitBtn.Location = new System.Drawing.Point(627, 261);
+            this.quitBtn.Location = new System.Drawing.Point(627, 329);
+
             this.quitBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.quitBtn.Name = "quitBtn";
             this.quitBtn.Size = new System.Drawing.Size(177, 56);
@@ -71,7 +72,9 @@ namespace Fall2020_CSC403_Project
             this.startGameBtn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.startGameBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.startGameBtn.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startGameBtn.Location = new System.Drawing.Point(627, 111);
+
+            this.startGameBtn.Location = new System.Drawing.Point(627, 178);
+
             this.startGameBtn.Margin = new System.Windows.Forms.Padding(75, 1, 112, 252);
             this.startGameBtn.Name = "startGameBtn";
             this.startGameBtn.Size = new System.Drawing.Size(177, 58);
@@ -98,7 +101,9 @@ namespace Fall2020_CSC403_Project
             this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(627, 188);
+
+            this.button1.Location = new System.Drawing.Point(627, 252);
+
             this.button1.Margin = new System.Windows.Forms.Padding(75, 1, 112, 252);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 58);
