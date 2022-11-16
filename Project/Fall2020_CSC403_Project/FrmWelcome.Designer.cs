@@ -29,6 +29,7 @@ namespace Fall2020_CSC403_Project
     /// </summary>
     private void InitializeComponent()
     {
+
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmWelcome));
       this.welcomeLable = new System.Windows.Forms.Label();
       this.quitBtn = new System.Windows.Forms.Button();
@@ -115,5 +116,6 @@ namespace Fall2020_CSC403_Project
     private System.Windows.Forms.Label welcomeLable;
     private System.Windows.Forms.Button startGameBtn;
     private System.Windows.Forms.Button quitBtn;
-  }
+        private System.Windows.Forms.Button PvPInit;
+    }
 }
