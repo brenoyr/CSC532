@@ -13,7 +13,6 @@ using System.Collections;
 namespace Fall2020_CSC403_Project {
   public partial class FrmLevel : Form {
 	private Player player;
-		private Player player2;
 
 	private Enemy enemyPoisonPacket;
 	private Enemy bossKoolaid;
@@ -42,15 +41,14 @@ namespace Fall2020_CSC403_Project {
 			backgroundMusic.settings.playCount = 999; // repeat the music when it ends
 	}
 
-	public void FrmLevel_Load(object sender, EventArgs e) {
+	private void FrmLevel_Load(object sender, EventArgs e) {
 	  const int PADDING = 7;
 	  const int NUM_WALLS = 13;
 	  const int NUM_MEDKITS = 2;
 	  MEDKIT_VALUE = 5;
 
 	  player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
-	  player2 = new Player(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
-      bossKoolaid = new Enemy("KoolAid", CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
+	  bossKoolaid = new Enemy("KoolAid", CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
 	  SaveModel.KoolAidAlive = true;
 	  enemyPoisonPacket = new Enemy("PoisonPacket", CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
 	  SaveModel.PoisonPacketAlive = true;
@@ -109,8 +107,7 @@ namespace Fall2020_CSC403_Project {
 
 
 	  Game.player = player;
-            Game.player2 = player2;
-            timeBegin = DateTime.Now;
+	  timeBegin = DateTime.Now;
 
 		backgroundMusic.controls.play();
 
