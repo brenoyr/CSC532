@@ -224,6 +224,12 @@ namespace Fall2020_CSC403_Project {
           picBossKoolAid.Hide();
           bossKoolaid = offScreenEnemy;
 		  SaveModel.KoolAidAlive = false;
+
+		  FrmLevel2 frmLevel2 = new FrmLevel2();
+		  frmLevel2.Show();
+		  backgroundMusic.controls.pause();
+		  bgPlaying = false;
+		  this.Close();
         }
 
         // Update player's health & experience bar while he is moving
@@ -322,7 +328,8 @@ namespace Fall2020_CSC403_Project {
 	  bool hitAWall = false;
 	  for (int m = 0; m < medkits.Length; m++) {
 		if (c.Collider.Intersects(medkits[m].Collider)) {
-		  if (((player.Health + medkits[m].health_value) <= player.MaxHealth) && (player.Health < player.MaxHealth)) {
+		  //if (((player.Health + medkits[m].health_value) <= player.MaxHealth) && (player.Health < player.MaxHealth)) {
+		  if (player.Health < player.MaxHealth) { 
 			  Console.WriteLine("player is being healed");
 			  player.Health += medkits[m].health_value;
 			  SaveModel.PlayerHealth = player.Health;
@@ -334,9 +341,14 @@ namespace Fall2020_CSC403_Project {
 				SaveModel.Medkit2Alive = false;
 			  }
 			  medkits[m].health_value = 0;
-			  medkits[m] = offScreenMedkit;
+			  //medkits[m] = offScreenMedkit;
 
               hitAWall = true;
+
+			  if (player.Health > player.MaxHealth)
+			  {
+				player.Health = player.MaxHealth;
+			  }
 		  }
 		  else { 
 			  Console.WriteLine("You are already at full health!");
@@ -357,13 +369,14 @@ namespace Fall2020_CSC403_Project {
 	  player.ResetMoveSpeed();
 	  //player.MoveBack();
 		frmBattle = FrmBattle.GetInstance(enemy);
-	  frmBattle.Show();
+	    frmBattle.Show();
 		Console.WriteLine(enemy);
 
-    if (enemy == bossKoolaid) {
-			frmBattle.SetupForBossBattle();
-	  }
-	}
+	    if (enemy == bossKoolaid) {
+			frmBattle.SetupForBossBattle(1);
+	    }
+
+    }
 
 	// now this function also controls what is shown in the player picturebox (animation)
 	private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
