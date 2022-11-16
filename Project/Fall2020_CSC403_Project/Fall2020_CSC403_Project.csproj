@@ -234,6 +234,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Connect.resx">
+      <DependentUpon>Connect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBattle PvP.resx">
       <DependentUpon>FrmBattle PvP.cs</DependentUpon>
     </EmbeddedResource>
