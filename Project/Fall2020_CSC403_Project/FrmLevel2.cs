@@ -26,6 +26,7 @@ namespace Fall2020_CSC403_Project
         private Enemy enemyBullet;
         private Enemy bossSolomon;
         private Character mazeMarkerChar;
+        private Character triviaMarkerChar;
         private Character[] walls;
         private Medkit[] medkits;
         private Spikes[] spikes;
@@ -131,6 +132,9 @@ namespace Fall2020_CSC403_Project
 
             PictureBox mPic = Controls.Find("mazeMarker", true)[0] as PictureBox;
             mazeMarkerChar = new Character(CreatePosition(mPic), CreateCollider(mPic, PADDING));
+            
+            PictureBox tPic = Controls.Find("triviaMarker", true)[0] as PictureBox;
+            triviaMarkerChar = new Character(CreatePosition(tPic), CreateCollider(tPic, PADDING));
 
 
 
@@ -312,10 +316,15 @@ namespace Fall2020_CSC403_Project
                     collectSound.Play();
                     PlayerHealthBar();
                 }
-                if (HitMazeMarker(player, mazeMarkerChar))
+                if (HitMarker(player, mazeMarkerChar))
                 {
                     FrmMaze frmMaze = new FrmMaze();
                     frmMaze.Show();
+                }
+                if (HitMarker(player, triviaMarkerChar))
+                {
+                    FrmTrivia frmTrivia = new FrmTrivia();
+                    frmTrivia.Show();
                 }
 
                 // update player's picture box
@@ -497,7 +506,7 @@ namespace Fall2020_CSC403_Project
             return you.Collider.Intersects(other.Collider);
         }
 
-        private bool HitMazeMarker(Character you, Character other)
+        private bool HitMarker(Character you, Character other)
         {
             if (you.Collider.Intersects(other.Collider))
             {

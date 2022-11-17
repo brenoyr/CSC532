@@ -60,6 +60,7 @@
             this.spikes1 = new System.Windows.Forms.PictureBox();
             this.spikes2 = new System.Windows.Forms.PictureBox();
             this.mazeMarker = new System.Windows.Forms.PictureBox();
+            this.triviaMarker = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
@@ -82,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spikes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spikes2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mazeMarker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triviaMarker)).BeginInit();
             this.SuspendLayout();
             // 
             // picPlayer
@@ -393,6 +395,17 @@
             this.mazeMarker.TabIndex = 46;
             this.mazeMarker.TabStop = false;
             // 
+            // triviaMarker
+            // 
+            this.triviaMarker.BackColor = System.Drawing.Color.Transparent;
+            this.triviaMarker.Image = global::Fall2020_CSC403_Project.Properties.Resources.greenMarker;
+            this.triviaMarker.Location = new System.Drawing.Point(533, 720);
+            this.triviaMarker.Name = "triviaMarker";
+            this.triviaMarker.Size = new System.Drawing.Size(50, 50);
+            this.triviaMarker.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.triviaMarker.TabIndex = 47;
+            this.triviaMarker.TabStop = false;
+            // 
             // FrmLevel2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,6 +413,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(834, 811);
+            this.Controls.Add(this.triviaMarker);
             this.Controls.Add(this.mazeMarker);
             this.Controls.Add(this.spikes2);
             this.Controls.Add(this.spikes1);
@@ -456,6 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spikes1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spikes2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mazeMarker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triviaMarker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,5 +508,6 @@
         private System.Windows.Forms.PictureBox spikes1;
         private System.Windows.Forms.PictureBox spikes2;
         private System.Windows.Forms.PictureBox mazeMarker;
+        private System.Windows.Forms.PictureBox triviaMarker;
     }
 }
