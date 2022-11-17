@@ -25,6 +25,7 @@ namespace Fall2020_CSC403_Project
         private Player player2;
         private Enemy enemyBullet;
         private Enemy bossSolomon;
+        private Character mazeMarkerChar;
         private Character[] walls;
         private Medkit[] medkits;
         private Spikes[] spikes;
@@ -128,7 +129,10 @@ namespace Fall2020_CSC403_Project
 
             }
 
-            
+            PictureBox mPic = Controls.Find("mazeMarker", true)[0] as PictureBox;
+            mazeMarkerChar = new Character(CreatePosition(mPic), CreateCollider(mPic, PADDING));
+
+
 
             Game.player = player;
             Game.player2 = player2;
@@ -303,15 +307,15 @@ namespace Fall2020_CSC403_Project
                     PlayerHealthBar();
                 }
                 if (HitASpike(player))
-                {
-                    /*Vector2 tmpLastPos = new Vector2(player.Position.x, player.Position.y - 20);
-                    player.LastPosition = tmpLastPos;
-                    player.MoveBack();
-                    */
-                    
+                {   
                     SoundPlayer collectSound = new SoundPlayer(Resources.collect_sound);
                     collectSound.Play();
                     PlayerHealthBar();
+                }
+                if (HitMazeMarker(player, mazeMarkerChar))
+                {
+                    FrmMaze frmMaze = new FrmMaze();
+                    frmMaze.Show();
                 }
 
                 // update player's picture box
@@ -469,7 +473,6 @@ namespace Fall2020_CSC403_Project
                         player.Die();
                         ShowDeathMenu();
                     }
-                    player.GoUp();
 
                     Vector2 pos = new Vector2(player.Position.x, 605);
                     player.Position = pos;
@@ -492,6 +495,20 @@ namespace Fall2020_CSC403_Project
         private bool HitAChar(Character you, Character other)
         {
             return you.Collider.Intersects(other.Collider);
+        }
+
+        private bool HitMazeMarker(Character you, Character other)
+        {
+            if (you.Collider.Intersects(other.Collider))
+            {
+                player.GoLeft();
+
+                Vector2 pos = new Vector2(player.Position.x, 605);
+                player.Position = pos;
+                return true;
+            }
+
+            return false; 
         }
 
         private void Fight(Enemy enemy)

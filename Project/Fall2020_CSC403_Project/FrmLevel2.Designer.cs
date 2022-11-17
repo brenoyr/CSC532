@@ -59,6 +59,7 @@
             this.spikes0 = new System.Windows.Forms.PictureBox();
             this.spikes1 = new System.Windows.Forms.PictureBox();
             this.spikes2 = new System.Windows.Forms.PictureBox();
+            this.mazeMarker = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
@@ -80,13 +81,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.spikes0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spikes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spikes2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mazeMarker)).BeginInit();
             this.SuspendLayout();
             // 
             // picPlayer
             // 
             this.picPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPlayer.Image = global::Fall2020_CSC403_Project.Properties.Resources.still_front;
-            this.picPlayer.Location = new System.Drawing.Point(325, 111);
+            this.picPlayer.Location = new System.Drawing.Point(303, 111);
             this.picPlayer.Name = "picPlayer";
             this.picPlayer.Size = new System.Drawing.Size(84, 104);
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -189,7 +191,7 @@
             this.picWall8.Image = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
             this.picWall8.Location = new System.Drawing.Point(260, 93);
             this.picWall8.Name = "picWall8";
-            this.picWall8.Size = new System.Drawing.Size(27, 379);
+            this.picWall8.Size = new System.Drawing.Size(27, 349);
             this.picWall8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picWall8.TabIndex = 9;
             this.picWall8.TabStop = false;
@@ -199,7 +201,7 @@
             this.picWall9.Image = global::Fall2020_CSC403_Project.Properties.Resources.wall3;
             this.picWall9.Location = new System.Drawing.Point(521, 257);
             this.picWall9.Name = "picWall9";
-            this.picWall9.Size = new System.Drawing.Size(108, 215);
+            this.picWall9.Size = new System.Drawing.Size(108, 185);
             this.picWall9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picWall9.TabIndex = 10;
             this.picWall9.TabStop = false;
@@ -289,7 +291,7 @@
             // 
             this.picEnemyBullet.BackColor = System.Drawing.Color.Transparent;
             this.picEnemyBullet.Image = global::Fall2020_CSC403_Project.Properties.Resources.bullet_right;
-            this.picEnemyBullet.Location = new System.Drawing.Point(101, 514);
+            this.picEnemyBullet.Location = new System.Drawing.Point(100, 454);
             this.picEnemyBullet.Name = "picEnemyBullet";
             this.picEnemyBullet.Size = new System.Drawing.Size(115, 101);
             this.picEnemyBullet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -380,6 +382,17 @@
             this.spikes2.TabIndex = 45;
             this.spikes2.TabStop = false;
             // 
+            // mazeMarker
+            // 
+            this.mazeMarker.BackColor = System.Drawing.Color.Transparent;
+            this.mazeMarker.Image = ((System.Drawing.Image)(resources.GetObject("mazeMarker.Image")));
+            this.mazeMarker.Location = new System.Drawing.Point(691, 720);
+            this.mazeMarker.Name = "mazeMarker";
+            this.mazeMarker.Size = new System.Drawing.Size(50, 50);
+            this.mazeMarker.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mazeMarker.TabIndex = 46;
+            this.mazeMarker.TabStop = false;
+            // 
             // FrmLevel2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,6 +400,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(834, 811);
+            this.Controls.Add(this.mazeMarker);
             this.Controls.Add(this.spikes2);
             this.Controls.Add(this.spikes1);
             this.Controls.Add(this.spikes0);
@@ -441,6 +455,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spikes0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spikes1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spikes2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mazeMarker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,5 +492,6 @@
         private System.Windows.Forms.PictureBox spikes0;
         private System.Windows.Forms.PictureBox spikes1;
         private System.Windows.Forms.PictureBox spikes2;
+        private System.Windows.Forms.PictureBox mazeMarker;
     }
 }

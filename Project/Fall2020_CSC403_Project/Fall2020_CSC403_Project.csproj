@@ -195,6 +195,12 @@
     <Compile Include="FrmLevel2.Designer.cs">
       <DependentUpon>FrmLevel2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMaze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaze.Designer.cs">
+      <DependentUpon>FrmMaze.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSaves.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLevel2.resx">
       <DependentUpon>FrmLevel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaze.resx">
+      <DependentUpon>FrmMaze.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSaves.resx">
       <DependentUpon>FrmSaves.cs</DependentUpon>
@@ -330,6 +339,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\blueMarker.png" />
     <None Include="Resources\spikes.png" />
     <None Include="Resources\final_battle_2.wav" />
     <None Include="Resources\battle_screen_solomon.jpg" />
