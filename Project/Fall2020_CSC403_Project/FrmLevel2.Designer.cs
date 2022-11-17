@@ -56,6 +56,9 @@
             this.picBossSolomon = new System.Windows.Forms.PictureBox();
             this.picOffScreenEnemy = new System.Windows.Forms.PictureBox();
             this.picOffScreenPlayer = new System.Windows.Forms.PictureBox();
+            this.spikes0 = new System.Windows.Forms.PictureBox();
+            this.spikes1 = new System.Windows.Forms.PictureBox();
+            this.spikes2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
@@ -74,6 +77,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBossSolomon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOffScreenEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOffScreenPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spikes0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spikes1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spikes2)).BeginInit();
             this.SuspendLayout();
             // 
             // picPlayer
@@ -325,7 +331,7 @@
             // 
             // picOffScreenEnemy
             // 
-            this.picOffScreenEnemy.Location = new System.Drawing.Point(698, 1);
+            this.picOffScreenEnemy.Location = new System.Drawing.Point(-698, 1);
             this.picOffScreenEnemy.Margin = new System.Windows.Forms.Padding(1);
             this.picOffScreenEnemy.Name = "picOffScreenEnemy";
             this.picOffScreenEnemy.Size = new System.Drawing.Size(38, 21);
@@ -334,12 +340,45 @@
             // 
             // picOffScreenPlayer
             // 
-            this.picOffScreenPlayer.Location = new System.Drawing.Point(735, 1);
+            this.picOffScreenPlayer.Location = new System.Drawing.Point(-735, 1);
             this.picOffScreenPlayer.Margin = new System.Windows.Forms.Padding(1);
             this.picOffScreenPlayer.Name = "picOffScreenPlayer";
             this.picOffScreenPlayer.Size = new System.Drawing.Size(38, 21);
             this.picOffScreenPlayer.TabIndex = 42;
             this.picOffScreenPlayer.TabStop = false;
+            // 
+            // spikes0
+            // 
+            this.spikes0.BackColor = System.Drawing.Color.Transparent;
+            this.spikes0.Image = global::Fall2020_CSC403_Project.Properties.Resources.spikes;
+            this.spikes0.Location = new System.Drawing.Point(227, 720);
+            this.spikes0.Name = "spikes0";
+            this.spikes0.Size = new System.Drawing.Size(79, 50);
+            this.spikes0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.spikes0.TabIndex = 43;
+            this.spikes0.TabStop = false;
+            // 
+            // spikes1
+            // 
+            this.spikes1.BackColor = System.Drawing.Color.Transparent;
+            this.spikes1.Image = global::Fall2020_CSC403_Project.Properties.Resources.spikes;
+            this.spikes1.Location = new System.Drawing.Point(303, 720);
+            this.spikes1.Name = "spikes1";
+            this.spikes1.Size = new System.Drawing.Size(84, 50);
+            this.spikes1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.spikes1.TabIndex = 44;
+            this.spikes1.TabStop = false;
+            // 
+            // spikes2
+            // 
+            this.spikes2.BackColor = System.Drawing.Color.Transparent;
+            this.spikes2.Image = global::Fall2020_CSC403_Project.Properties.Resources.spikes;
+            this.spikes2.Location = new System.Drawing.Point(384, 720);
+            this.spikes2.Name = "spikes2";
+            this.spikes2.Size = new System.Drawing.Size(85, 50);
+            this.spikes2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.spikes2.TabIndex = 45;
+            this.spikes2.TabStop = false;
             // 
             // FrmLevel2
             // 
@@ -348,6 +387,9 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(834, 811);
+            this.Controls.Add(this.spikes2);
+            this.Controls.Add(this.spikes1);
+            this.Controls.Add(this.spikes0);
             this.Controls.Add(this.picOffScreenPlayer);
             this.Controls.Add(this.picOffScreenEnemy);
             this.Controls.Add(this.picBossSolomon);
@@ -396,6 +438,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBossSolomon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOffScreenEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOffScreenPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spikes0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spikes1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spikes2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,5 +474,8 @@
         private System.Windows.Forms.PictureBox picBossSolomon;
         private System.Windows.Forms.PictureBox picOffScreenEnemy;
         private System.Windows.Forms.PictureBox picOffScreenPlayer;
+        private System.Windows.Forms.PictureBox spikes0;
+        private System.Windows.Forms.PictureBox spikes1;
+        private System.Windows.Forms.PictureBox spikes2;
     }
 }

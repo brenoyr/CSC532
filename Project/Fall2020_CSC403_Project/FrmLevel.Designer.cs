@@ -217,6 +217,7 @@ namespace Fall2020_CSC403_Project {
             // 
             // medkit1
             // 
+            this.medkit1.BackColor = System.Drawing.Color.Transparent;
             this.medkit1.Image = global::Fall2020_CSC403_Project.Properties.Resources.medkit;
             this.medkit1.Location = new System.Drawing.Point(1034, 582);
             this.medkit1.Name = "medkit1";
@@ -227,6 +228,7 @@ namespace Fall2020_CSC403_Project {
             // 
             // medkit0
             // 
+            this.medkit0.BackColor = System.Drawing.Color.Transparent;
             this.medkit0.Image = global::Fall2020_CSC403_Project.Properties.Resources.medkit;
             this.medkit0.Location = new System.Drawing.Point(116, 65);
             this.medkit0.Name = "medkit0";

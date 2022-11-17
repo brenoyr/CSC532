@@ -10,7 +10,7 @@ namespace Fall2020_CSC403_Project.code {
     private const int GO_INC = 3; // 3
 
     public Vector2 MoveSpeed { get; private set; }
-    public Vector2 LastPosition { get; private set; }
+    public Vector2 LastPosition { get; set; }
     public Vector2 Position { get; set; }
 
     public Collider Collider { get; private set; }

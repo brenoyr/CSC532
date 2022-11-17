@@ -27,11 +27,13 @@ namespace Fall2020_CSC403_Project
         private Enemy bossSolomon;
         private Character[] walls;
         private Medkit[] medkits;
+        private Spikes[] spikes;
 
         private DateTime timeBegin;
         private TimeSpan span;
         private FrmBattle frmBattle;
         private FrmPause frmPause;
+        private FrmDeath frmDeath;
 
         // PictureBox to handle dead Enemy and player
         private Enemy offScreenEnemy; // whenever an enemy dies, set that enemy to this instance (a hidden pictureBox)
@@ -39,6 +41,7 @@ namespace Fall2020_CSC403_Project
 
         private Medkit offScreenMedkit;
         private int MEDKIT_VALUE;
+        private int SPIKES_DAMAGE;
 
         WindowsMediaPlayer backgroundMusic = new WindowsMediaPlayer();
         bool bgPlaying = true;
@@ -55,7 +58,9 @@ namespace Fall2020_CSC403_Project
             const int PADDING = 7;
             const int NUM_WALLS = 10;
             const int NUM_MEDKITS = 2;
+            const int NUM_SPIKES = 3;
             MEDKIT_VALUE = 5;
+            SPIKES_DAMAGE = 2;
 
             player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
 
@@ -114,6 +119,16 @@ namespace Fall2020_CSC403_Project
 
             SaveModel.Medkit1Position = (Dictionary<string, float>)medkitPositions[0];
             SaveModel.Medkit2Position = (Dictionary<string, float>)medkitPositions[1];
+
+            spikes = new Spikes[NUM_SPIKES];
+            for (int s = 0; s < NUM_SPIKES; s++)
+            {
+                PictureBox pic = Controls.Find("spikes" + s.ToString(), true)[0] as PictureBox;
+                spikes[s] = new Spikes(CreatePosition(pic), CreateCollider(pic, PADDING), SPIKES_DAMAGE);
+
+            }
+
+            
 
             Game.player = player;
             Game.player2 = player2;
@@ -287,6 +302,17 @@ namespace Fall2020_CSC403_Project
                     collectSound.Play();
                     PlayerHealthBar();
                 }
+                if (HitASpike(player))
+                {
+                    /*Vector2 tmpLastPos = new Vector2(player.Position.x, player.Position.y - 20);
+                    player.LastPosition = tmpLastPos;
+                    player.MoveBack();
+                    */
+                    
+                    SoundPlayer collectSound = new SoundPlayer(Resources.collect_sound);
+                    collectSound.Play();
+                    PlayerHealthBar();
+                }
 
                 // update player's picture box
                 picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
@@ -421,6 +447,46 @@ namespace Fall2020_CSC403_Project
             }
 
             return hitAWall;
+        }
+
+        private bool HitASpike(Character c)
+        {
+            bool hitASpike = false;
+            for (int s = 0; s < spikes.Length; s++)
+            {
+                if (c.Collider.Intersects(spikes[s].Collider))
+                {
+                    Console.WriteLine("player is being hurt");
+                    player.Health -= spikes[s].damage_value;
+                    //SaveModel.PlayerHealth = player.Health;
+
+                    hitASpike = true;
+
+                    if (player.Health <= 0)
+                    {
+                        picPlayer.Hide();
+                        player = offScreenPlayer;
+                        player.Die();
+                        ShowDeathMenu();
+                    }
+                    player.GoUp();
+
+                    Vector2 pos = new Vector2(player.Position.x, 605);
+                    player.Position = pos;
+
+
+                }
+            }
+
+            return hitASpike;
+        }
+
+        private void ShowDeathMenu()
+        {
+            frmDeath = new FrmDeath();
+            // removes the options to minimize/resize/close the window so the user has to make a choice
+            frmDeath.ControlBox = false;
+            frmDeath.ShowDialog(); // ShowDialog() disables game window
         }
 
         private bool HitAChar(Character you, Character other)

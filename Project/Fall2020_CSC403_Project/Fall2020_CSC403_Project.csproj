@@ -330,6 +330,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\spikes.png" />
     <None Include="Resources\final_battle_2.wav" />
     <None Include="Resources\battle_screen_solomon.jpg" />
     <None Include="Resources\enemy_solomon.png" />
