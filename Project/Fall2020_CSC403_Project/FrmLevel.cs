@@ -17,6 +17,7 @@ namespace Fall2020_CSC403_Project {
 	private Enemy enemyPoisonPacket;
 	private Enemy bossKoolaid;
 	private Enemy enemyCheeto;
+	private Character goldMarker;
 	private Character[] walls;
 	private Medkit[] medkits;
 
@@ -105,6 +106,9 @@ namespace Fall2020_CSC403_Project {
 
 	  SaveModel.Medkit1Position = (Dictionary<string, float>)medkitPositions[0];
 	  SaveModel.Medkit2Position = (Dictionary<string, float>)medkitPositions[1];
+
+		PictureBox markerPic = Controls.Find("level2Marker", true)[0] as PictureBox;
+		goldMarker = new Character(CreatePosition(markerPic), CreateCollider(markerPic, PADDING));
 
 
 	  Game.player = player;
@@ -200,6 +204,14 @@ namespace Fall2020_CSC403_Project {
 					collectSound.Play();
 					PlayerHealthBar();
 			}
+			if (HitAChar(player, goldMarker))
+			{
+                FrmLevel2 frmLevel2 = new FrmLevel2();
+                frmLevel2.Show();
+                backgroundMusic.controls.pause();
+                bgPlaying = false;
+                this.Close();
+            }
 
 			// update player's picture box
 			picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
@@ -224,12 +236,6 @@ namespace Fall2020_CSC403_Project {
           picBossKoolAid.Hide();
           bossKoolaid = offScreenEnemy;
 		  SaveModel.KoolAidAlive = false;
-
-		  FrmLevel2 frmLevel2 = new FrmLevel2();
-		  frmLevel2.Show();
-		  backgroundMusic.controls.pause();
-		  bgPlaying = false;
-		  this.Close();
         }
 
         // Update player's health & experience bar while he is moving

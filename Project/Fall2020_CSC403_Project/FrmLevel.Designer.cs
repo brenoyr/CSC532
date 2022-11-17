@@ -59,6 +59,7 @@ namespace Fall2020_CSC403_Project {
             this.picWall3 = new System.Windows.Forms.PictureBox();
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.level2Marker = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBgMusic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
@@ -81,6 +82,7 @@ namespace Fall2020_CSC403_Project {
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.level2Marker)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -243,7 +245,7 @@ namespace Fall2020_CSC403_Project {
             this.picWall2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.walltree2;
             this.picWall2.Location = new System.Drawing.Point(551, 1);
             this.picWall2.Name = "picWall2";
-            this.picWall2.Size = new System.Drawing.Size(469, 67);
+            this.picWall2.Size = new System.Drawing.Size(624, 67);
             this.picWall2.TabIndex = 16;
             this.picWall2.TabStop = false;
             // 
@@ -279,9 +281,9 @@ namespace Fall2020_CSC403_Project {
             // 
             this.picWall8.BackColor = System.Drawing.Color.Transparent;
             this.picWall8.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.walltree2;
-            this.picWall8.Location = new System.Drawing.Point(1093, 274);
+            this.picWall8.Location = new System.Drawing.Point(1093, 65);
             this.picWall8.Name = "picWall8";
-            this.picWall8.Size = new System.Drawing.Size(82, 449);
+            this.picWall8.Size = new System.Drawing.Size(82, 658);
             this.picWall8.TabIndex = 15;
             this.picWall8.TabStop = false;
             // 
@@ -390,7 +392,7 @@ namespace Fall2020_CSC403_Project {
             this.picBossKoolAid.BackColor = System.Drawing.Color.Transparent;
             this.picBossKoolAid.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBossKoolAid.BackgroundImage")));
             this.picBossKoolAid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBossKoolAid.Location = new System.Drawing.Point(971, 74);
+            this.picBossKoolAid.Location = new System.Drawing.Point(890, 133);
             this.picBossKoolAid.Name = "picBossKoolAid";
             this.picBossKoolAid.Size = new System.Drawing.Size(193, 194);
             this.picBossKoolAid.TabIndex = 1;
@@ -407,6 +409,17 @@ namespace Fall2020_CSC403_Project {
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
+            // level2Marker
+            // 
+            this.level2Marker.BackColor = System.Drawing.Color.Transparent;
+            this.level2Marker.Image = global::Fall2020_CSC403_Project.Properties.Resources.goldMarker;
+            this.level2Marker.Location = new System.Drawing.Point(1043, 65);
+            this.level2Marker.Name = "level2Marker";
+            this.level2Marker.Size = new System.Drawing.Size(50, 50);
+            this.level2Marker.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.level2Marker.TabIndex = 47;
+            this.level2Marker.TabStop = false;
+            // 
             // FrmLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,7 +428,8 @@ namespace Fall2020_CSC403_Project {
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.jungle;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(722, 651);
+            this.ClientSize = new System.Drawing.Size(1182, 651);
+            this.Controls.Add(this.level2Marker);
             this.Controls.Add(this.EXPlabel);
             this.Controls.Add(this.lblPlayerExperience);
             this.Controls.Add(this.lblPlayerExperienceBlack);
@@ -476,6 +490,7 @@ namespace Fall2020_CSC403_Project {
             ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.level2Marker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,6 +530,7 @@ namespace Fall2020_CSC403_Project {
     private Label lblPlayerExperienceBlack;
     private Label lblPlayerExperience;
     private Label EXPlabel;
-  }
+        private PictureBox level2Marker;
+    }
 }
 
